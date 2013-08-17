@@ -1,1668 +1,634 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>00FBE902AE964CD98C03B86A</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>449EE18AA5784A83B63782C8</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Pods.xcconfig</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-		</dict>
-		<key>A621DB6A719541718A8C6494</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Pods-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>EECF805025754412BAFBAB2B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>FED540493B054B23AA037B96</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F39FBB7717BFB4B700D9F65C</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F39FBBBE17BFB4DF00D9F65C</string>
-				<string>F39FBB8917BFB4B700D9F65C</string>
-				<string>F39FBBAD17BFB4B800D9F65C</string>
-				<string>F39FBB8217BFB4B700D9F65C</string>
-				<string>F39FBB8117BFB4B700D9F65C</string>
-				<string>449EE18AA5784A83B63782C8</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBB7817BFB4B700D9F65C</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>CLASSPREFIX</key>
-				<string>VKIM</string>
-				<key>LastUpgradeCheck</key>
-				<string>0460</string>
-				<key>ORGANIZATIONNAME</key>
-				<string>kovtash.com</string>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>F39FBB7B17BFB4B700D9F65C</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-			</array>
-			<key>mainGroup</key>
-			<string>F39FBB7717BFB4B700D9F65C</string>
-			<key>productRefGroup</key>
-			<string>F39FBB8117BFB4B700D9F65C</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>F39FBB7F17BFB4B700D9F65C</string>
-				<string>F39FBBA517BFB4B800D9F65C</string>
-			</array>
-		</dict>
-		<key>F39FBB7B17BFB4B700D9F65C</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>F39FBBB617BFB4B900D9F65C</string>
-				<string>F39FBBB717BFB4B900D9F65C</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>F39FBB7C17BFB4B700D9F65C</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>F39FBB9017BFB4B700D9F65C</string>
-				<string>F39FBB9417BFB4B700D9F65C</string>
-				<string>F39FBBA017BFB4B800D9F65C</string>
-				<string>F39FBBDE17BFB4E000D9F65C</string>
-				<string>F39FBBDF17BFB4E000D9F65C</string>
-				<string>F39FBBE017BFB4E000D9F65C</string>
-				<string>F39FBBE117BFB4E000D9F65C</string>
-				<string>F39FBBE217BFB4E000D9F65C</string>
-				<string>F39FBBE317BFB4E000D9F65C</string>
-				<string>F39FBBE417BFB4E000D9F65C</string>
-				<string>F39FBBE517BFB4E000D9F65C</string>
-				<string>F39FBBE617BFB4E000D9F65C</string>
-				<string>F39FBBE717BFB4E000D9F65C</string>
-				<string>F39FBBE817BFB4E000D9F65C</string>
-				<string>F39FBBE917BFB4E000D9F65C</string>
-				<string>F39FBBEA17BFB4E000D9F65C</string>
-				<string>F39FBBEB17BFB4E000D9F65C</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>F39FBB7D17BFB4B700D9F65C</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>F39FBB8417BFB4B700D9F65C</string>
-				<string>F39FBB8617BFB4B700D9F65C</string>
-				<string>F39FBB8817BFB4B700D9F65C</string>
-				<string>EECF805025754412BAFBAB2B</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>F39FBB7E17BFB4B700D9F65C</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>F39FBB8E17BFB4B700D9F65C</string>
-				<string>F39FBB9617BFB4B700D9F65C</string>
-				<string>F39FBB9817BFB4B800D9F65C</string>
-				<string>F39FBB9A17BFB4B800D9F65C</string>
-				<string>F39FBB9D17BFB4B800D9F65C</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>F39FBB7F17BFB4B700D9F65C</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>F39FBBB817BFB4B900D9F65C</string>
-			<key>buildPhases</key>
-			<array>
-				<string>00FBE902AE964CD98C03B86A</string>
-				<string>F39FBB7C17BFB4B700D9F65C</string>
-				<string>F39FBB7D17BFB4B700D9F65C</string>
-				<string>F39FBB7E17BFB4B700D9F65C</string>
-				<string>A621DB6A719541718A8C6494</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>VKIMClientTest</string>
-			<key>productName</key>
-			<string>VKIMClientTest</string>
-			<key>productReference</key>
-			<string>F39FBB8017BFB4B700D9F65C</string>
-			<key>productType</key>
-			<string>com.apple.product-type.application</string>
-		</dict>
-		<key>F39FBB8017BFB4B700D9F65C</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.application</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>VKIMClientTest.app</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>F39FBB8117BFB4B700D9F65C</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F39FBB8017BFB4B700D9F65C</string>
-				<string>F39FBBA617BFB4B800D9F65C</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBB8217BFB4B700D9F65C</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F39FBB8317BFB4B700D9F65C</string>
-				<string>F39FBB8517BFB4B700D9F65C</string>
-				<string>F39FBB8717BFB4B700D9F65C</string>
-				<string>F39FBBA717BFB4B800D9F65C</string>
-				<string>FED540493B054B23AA037B96</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBB8317BFB4B700D9F65C</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>UIKit.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/UIKit.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>F39FBB8417BFB4B700D9F65C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F39FBB8317BFB4B700D9F65C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F39FBB8517BFB4B700D9F65C</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Foundation.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/Foundation.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>F39FBB8617BFB4B700D9F65C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F39FBB8517BFB4B700D9F65C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F39FBB8717BFB4B700D9F65C</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>CoreGraphics.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/CoreGraphics.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>F39FBB8817BFB4B700D9F65C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F39FBB8717BFB4B700D9F65C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F39FBB8917BFB4B700D9F65C</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F39FBB9217BFB4B700D9F65C</string>
-				<string>F39FBB9317BFB4B700D9F65C</string>
-				<string>F39FBB9B17BFB4B800D9F65C</string>
-				<string>F39FBB9E17BFB4B800D9F65C</string>
-				<string>F39FBB9F17BFB4B800D9F65C</string>
-				<string>F39FBB8A17BFB4B700D9F65C</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>VKIMClientTest</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBB8A17BFB4B700D9F65C</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F39FBB8B17BFB4B700D9F65C</string>
-				<string>F39FBB8C17BFB4B700D9F65C</string>
-				<string>F39FBB8F17BFB4B700D9F65C</string>
-				<string>F39FBB9117BFB4B700D9F65C</string>
-				<string>F39FBB9517BFB4B700D9F65C</string>
-				<string>F39FBB9717BFB4B800D9F65C</string>
-				<string>F39FBB9917BFB4B800D9F65C</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBB8B17BFB4B700D9F65C</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>VKIMClientTest-Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBB8C17BFB4B700D9F65C</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F39FBB8D17BFB4B700D9F65C</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBB8D17BFB4B700D9F65C</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>en</string>
-			<key>path</key>
-			<string>en.lproj/InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBB8E17BFB4B700D9F65C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F39FBB8C17BFB4B700D9F65C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F39FBB8F17BFB4B700D9F65C</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>main.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBB9017BFB4B700D9F65C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F39FBB8F17BFB4B700D9F65C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F39FBB9117BFB4B700D9F65C</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>VKIMClientTest-Prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBB9217BFB4B700D9F65C</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>VKIMAppDelegate.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBB9317BFB4B700D9F65C</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>VKIMAppDelegate.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBB9417BFB4B700D9F65C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F39FBB9317BFB4B700D9F65C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F39FBB9517BFB4B700D9F65C</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>Default.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBB9617BFB4B700D9F65C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F39FBB9517BFB4B700D9F65C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F39FBB9717BFB4B800D9F65C</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>Default@2x.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBB9817BFB4B800D9F65C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F39FBB9717BFB4B800D9F65C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F39FBB9917BFB4B800D9F65C</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>Default-568h@2x.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBB9A17BFB4B800D9F65C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F39FBB9917BFB4B800D9F65C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F39FBB9B17BFB4B800D9F65C</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F39FBB9C17BFB4B800D9F65C</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>MainStoryboard.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBB9C17BFB4B800D9F65C</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>name</key>
-			<string>en</string>
-			<key>path</key>
-			<string>en.lproj/MainStoryboard.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBB9D17BFB4B800D9F65C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F39FBB9B17BFB4B800D9F65C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F39FBB9E17BFB4B800D9F65C</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>VKIMViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBB9F17BFB4B800D9F65C</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>VKIMViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBBA017BFB4B800D9F65C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F39FBB9F17BFB4B800D9F65C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F39FBBA117BFB4B800D9F65C</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>F39FBBB517BFB4B900D9F65C</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>F39FBBA217BFB4B800D9F65C</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>F39FBBA817BFB4B800D9F65C</string>
-				<string>F39FBBA917BFB4B800D9F65C</string>
-				<string>F39FBBAA17BFB4B800D9F65C</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>F39FBBA317BFB4B800D9F65C</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>F39FBBB217BFB4B900D9F65C</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>F39FBBA417BFB4B800D9F65C</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string># Run the unit tests in this test bundle.
-"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests"
-</string>
-		</dict>
-		<key>F39FBBA517BFB4B800D9F65C</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>F39FBBBB17BFB4B900D9F65C</string>
-			<key>buildPhases</key>
-			<array>
-				<string>F39FBBA117BFB4B800D9F65C</string>
-				<string>F39FBBA217BFB4B800D9F65C</string>
-				<string>F39FBBA317BFB4B800D9F65C</string>
-				<string>F39FBBA417BFB4B800D9F65C</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>F39FBBAC17BFB4B800D9F65C</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>VKIMClientTestTests</string>
-			<key>productName</key>
-			<string>VKIMClientTestTests</string>
-			<key>productReference</key>
-			<string>F39FBBA617BFB4B800D9F65C</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle</string>
-		</dict>
-		<key>F39FBBA617BFB4B800D9F65C</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>VKIMClientTestTests.octest</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>F39FBBA717BFB4B800D9F65C</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>SenTestingKit.framework</string>
-			<key>path</key>
-			<string>Library/Frameworks/SenTestingKit.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>F39FBBA817BFB4B800D9F65C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F39FBBA717BFB4B800D9F65C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F39FBBA917BFB4B800D9F65C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F39FBB8317BFB4B700D9F65C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F39FBBAA17BFB4B800D9F65C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F39FBB8517BFB4B700D9F65C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F39FBBAB17BFB4B800D9F65C</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>F39FBB7817BFB4B700D9F65C</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>F39FBB7F17BFB4B700D9F65C</string>
-			<key>remoteInfo</key>
-			<string>VKIMClientTest</string>
-		</dict>
-		<key>F39FBBAC17BFB4B800D9F65C</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>F39FBB7F17BFB4B700D9F65C</string>
-			<key>targetProxy</key>
-			<string>F39FBBAB17BFB4B800D9F65C</string>
-		</dict>
-		<key>F39FBBAD17BFB4B800D9F65C</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F39FBBB317BFB4B900D9F65C</string>
-				<string>F39FBBB417BFB4B900D9F65C</string>
-				<string>F39FBBAE17BFB4B900D9F65C</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>VKIMClientTestTests</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBBAE17BFB4B900D9F65C</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F39FBBAF17BFB4B900D9F65C</string>
-				<string>F39FBBB017BFB4B900D9F65C</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBBAF17BFB4B900D9F65C</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>VKIMClientTestTests-Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBBB017BFB4B900D9F65C</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F39FBBB117BFB4B900D9F65C</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBBB117BFB4B900D9F65C</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>en</string>
-			<key>path</key>
-			<string>en.lproj/InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBBB217BFB4B900D9F65C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F39FBBB017BFB4B900D9F65C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F39FBBB317BFB4B900D9F65C</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>VKIMClientTestTests.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBBB417BFB4B900D9F65C</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>VKIMClientTestTests.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBBB517BFB4B900D9F65C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F39FBBB417BFB4B900D9F65C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F39FBBB617BFB4B900D9F65C</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY</key>
-				<string>iPhone Developer</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>6.1</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>PROVISIONING_PROFILE</key>
-				<string></string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>F39FBBB717BFB4B900D9F65C</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY</key>
-				<string>iPhone Developer</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>6.1</string>
-				<key>OTHER_CFLAGS</key>
-				<string>-DNS_BLOCK_ASSERTIONS=1</string>
-				<key>PROVISIONING_PROFILE</key>
-				<string></string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>F39FBBB817BFB4B900D9F65C</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>F39FBBB917BFB4B900D9F65C</string>
-				<string>F39FBBBA17BFB4B900D9F65C</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>F39FBBB917BFB4B900D9F65C</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>449EE18AA5784A83B63782C8</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>VKIMClientTest/VKIMClientTest-Prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>VKIMClientTest/VKIMClientTest-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>app</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>F39FBBBA17BFB4B900D9F65C</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>449EE18AA5784A83B63782C8</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>VKIMClientTest/VKIMClientTest-Prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>VKIMClientTest/VKIMClientTest-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>app</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>F39FBBBB17BFB4B900D9F65C</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>F39FBBBC17BFB4B900D9F65C</string>
-				<string>F39FBBBD17BFB4B900D9F65C</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>F39FBBBC17BFB4B900D9F65C</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>BUNDLE_LOADER</key>
-				<string>$(BUILT_PRODUCTS_DIR)/VKIMClientTest.app/VKIMClientTest</string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>"$(SDKROOT)/Developer/Library/Frameworks"</string>
-					<string>"$(DEVELOPER_LIBRARY_DIR)/Frameworks"</string>
-				</array>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>VKIMClientTest/VKIMClientTest-Prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>VKIMClientTestTests/VKIMClientTestTests-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUNDLE_LOADER)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>octest</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>F39FBBBD17BFB4B900D9F65C</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>BUNDLE_LOADER</key>
-				<string>$(BUILT_PRODUCTS_DIR)/VKIMClientTest.app/VKIMClientTest</string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>"$(SDKROOT)/Developer/Library/Frameworks"</string>
-					<string>"$(DEVELOPER_LIBRARY_DIR)/Frameworks"</string>
-				</array>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>VKIMClientTest/VKIMClientTest-Prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>VKIMClientTestTests/VKIMClientTestTests-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUNDLE_LOADER)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>octest</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>F39FBBBE17BFB4DF00D9F65C</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F39FBBBF17BFB4E000D9F65C</string>
-				<string>F39FBBCA17BFB4E000D9F65C</string>
-				<string>F39FBBD317BFB4E000D9F65C</string>
-				<string>F39FBBD617BFB4E000D9F65C</string>
-				<string>F39FBBD717BFB4E000D9F65C</string>
-				<string>F39FBBD817BFB4E000D9F65C</string>
-				<string>F39FBBD917BFB4E000D9F65C</string>
-				<string>F39FBBDA17BFB4E000D9F65C</string>
-				<string>F39FBBDB17BFB4E000D9F65C</string>
-				<string>F39FBBDC17BFB4E000D9F65C</string>
-				<string>F39FBBDD17BFB4E000D9F65C</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>VKIMClient</string>
-			<key>path</key>
-			<string>../VKIMClient</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBBBF17BFB4E000D9F65C</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F39FBBC017BFB4E000D9F65C</string>
-				<string>F39FBBC117BFB4E000D9F65C</string>
-				<string>F39FBBC217BFB4E000D9F65C</string>
-				<string>F39FBBC317BFB4E000D9F65C</string>
-				<string>F39FBBC417BFB4E000D9F65C</string>
-				<string>F39FBBC517BFB4E000D9F65C</string>
-				<string>F39FBBC617BFB4E000D9F65C</string>
-				<string>F39FBBC717BFB4E000D9F65C</string>
-				<string>F39FBBC817BFB4E000D9F65C</string>
-				<string>F39FBBC917BFB4E000D9F65C</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Model</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBBC017BFB4E000D9F65C</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>VKIMContactData+stringsMapping.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBBC117BFB4E000D9F65C</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>VKIMContactData+stringsMapping.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBBC217BFB4E000D9F65C</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>VKIMContactData.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBBC317BFB4E000D9F65C</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>VKIMContactData.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBBC417BFB4E000D9F65C</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>VKIMErrorData.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBBC517BFB4E000D9F65C</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>VKIMErrorData.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBBC617BFB4E000D9F65C</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>VKIMMessageData.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBBC717BFB4E000D9F65C</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>VKIMMessageData.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBBC817BFB4E000D9F65C</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>VKIMSessionData.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBBC917BFB4E000D9F65C</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>VKIMSessionData.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBBCA17BFB4E000D9F65C</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F39FBBCB17BFB4E000D9F65C</string>
-				<string>F39FBBCC17BFB4E000D9F65C</string>
-				<string>F39FBBCD17BFB4E000D9F65C</string>
-				<string>F39FBBCE17BFB4E000D9F65C</string>
-				<string>F39FBBCF17BFB4E000D9F65C</string>
-				<string>F39FBBD017BFB4E000D9F65C</string>
-				<string>F39FBBD117BFB4E000D9F65C</string>
-				<string>F39FBBD217BFB4E000D9F65C</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>SessionState</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBBCB17BFB4E000D9F65C</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>VKIMSessionStateAbstract.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBBCC17BFB4E000D9F65C</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>VKIMSessionStateAbstract.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBBCD17BFB4E000D9F65C</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>VKIMSessionStateActive.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBBCE17BFB4E000D9F65C</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>VKIMSessionStateActive.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBBCF17BFB4E000D9F65C</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>VKIMSessionStateCreated.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBBD017BFB4E000D9F65C</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>VKIMSessionStateCreated.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBBD117BFB4E000D9F65C</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>VKIMSessionStateNoOp.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBBD217BFB4E000D9F65C</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>VKIMSessionStateNoOp.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBBD317BFB4E000D9F65C</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F39FBBD417BFB4E000D9F65C</string>
-				<string>F39FBBD517BFB4E000D9F65C</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Tools</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBBD417BFB4E000D9F65C</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>NSString+Emoji.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBBD517BFB4E000D9F65C</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>NSString+Emoji.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBBD617BFB4E000D9F65C</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>VKIMAbstractOperationFactory.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBBD717BFB4E000D9F65C</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>VKIMAbstractOperationFactory.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBBD817BFB4E000D9F65C</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>VKIMRestOperationFactory.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBBD917BFB4E000D9F65C</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>VKIMRestOperationFactory.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBBDA17BFB4E000D9F65C</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>VKIMSession.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBBDB17BFB4E000D9F65C</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>VKIMSession.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBBDC17BFB4E000D9F65C</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>VKIMSessionErrorFactory.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBBDD17BFB4E000D9F65C</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>VKIMSessionErrorFactory.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F39FBBDE17BFB4E000D9F65C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F39FBBC117BFB4E000D9F65C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F39FBBDF17BFB4E000D9F65C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F39FBBC317BFB4E000D9F65C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F39FBBE017BFB4E000D9F65C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F39FBBC517BFB4E000D9F65C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F39FBBE117BFB4E000D9F65C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F39FBBC717BFB4E000D9F65C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F39FBBE217BFB4E000D9F65C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F39FBBC917BFB4E000D9F65C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F39FBBE317BFB4E000D9F65C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F39FBBCC17BFB4E000D9F65C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F39FBBE417BFB4E000D9F65C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F39FBBCE17BFB4E000D9F65C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F39FBBE517BFB4E000D9F65C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F39FBBD017BFB4E000D9F65C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F39FBBE617BFB4E000D9F65C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F39FBBD217BFB4E000D9F65C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F39FBBE717BFB4E000D9F65C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F39FBBD517BFB4E000D9F65C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F39FBBE817BFB4E000D9F65C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F39FBBD717BFB4E000D9F65C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F39FBBE917BFB4E000D9F65C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F39FBBD917BFB4E000D9F65C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F39FBBEA17BFB4E000D9F65C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F39FBBDB17BFB4E000D9F65C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F39FBBEB17BFB4E000D9F65C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F39FBBDD17BFB4E000D9F65C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>FED540493B054B23AA037B96</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>F39FBB7817BFB4B700D9F65C</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EECF805025754412BAFBAB2B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FED540493B054B23AA037B96 /* libPods.a */; };
+		F39FBB8417BFB4B700D9F65C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39FBB8317BFB4B700D9F65C /* UIKit.framework */; };
+		F39FBB8617BFB4B700D9F65C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39FBB8517BFB4B700D9F65C /* Foundation.framework */; };
+		F39FBB8817BFB4B700D9F65C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39FBB8717BFB4B700D9F65C /* CoreGraphics.framework */; };
+		F39FBB8E17BFB4B700D9F65C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F39FBB8C17BFB4B700D9F65C /* InfoPlist.strings */; };
+		F39FBB9017BFB4B700D9F65C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F39FBB8F17BFB4B700D9F65C /* main.m */; };
+		F39FBB9417BFB4B700D9F65C /* VKIMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F39FBB9317BFB4B700D9F65C /* VKIMAppDelegate.m */; };
+		F39FBB9617BFB4B700D9F65C /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = F39FBB9517BFB4B700D9F65C /* Default.png */; };
+		F39FBB9817BFB4B800D9F65C /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F39FBB9717BFB4B800D9F65C /* Default@2x.png */; };
+		F39FBB9A17BFB4B800D9F65C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F39FBB9917BFB4B800D9F65C /* Default-568h@2x.png */; };
+		F39FBB9D17BFB4B800D9F65C /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F39FBB9B17BFB4B800D9F65C /* MainStoryboard.storyboard */; };
+		F39FBBA017BFB4B800D9F65C /* VKIMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F39FBB9F17BFB4B800D9F65C /* VKIMViewController.m */; };
+		F39FBBA817BFB4B800D9F65C /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39FBBA717BFB4B800D9F65C /* SenTestingKit.framework */; };
+		F39FBBA917BFB4B800D9F65C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39FBB8317BFB4B700D9F65C /* UIKit.framework */; };
+		F39FBBAA17BFB4B800D9F65C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39FBB8517BFB4B700D9F65C /* Foundation.framework */; };
+		F39FBBB217BFB4B900D9F65C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F39FBBB017BFB4B900D9F65C /* InfoPlist.strings */; };
+		F39FBBB517BFB4B900D9F65C /* VKIMClientTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F39FBBB417BFB4B900D9F65C /* VKIMClientTestTests.m */; };
+		F39FBBDE17BFB4E000D9F65C /* VKIMContactData+stringsMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = F39FBBC117BFB4E000D9F65C /* VKIMContactData+stringsMapping.m */; };
+		F39FBBDF17BFB4E000D9F65C /* VKIMContactData.m in Sources */ = {isa = PBXBuildFile; fileRef = F39FBBC317BFB4E000D9F65C /* VKIMContactData.m */; };
+		F39FBBE017BFB4E000D9F65C /* VKIMErrorData.m in Sources */ = {isa = PBXBuildFile; fileRef = F39FBBC517BFB4E000D9F65C /* VKIMErrorData.m */; };
+		F39FBBE117BFB4E000D9F65C /* VKIMMessageData.m in Sources */ = {isa = PBXBuildFile; fileRef = F39FBBC717BFB4E000D9F65C /* VKIMMessageData.m */; };
+		F39FBBE217BFB4E000D9F65C /* VKIMSessionData.m in Sources */ = {isa = PBXBuildFile; fileRef = F39FBBC917BFB4E000D9F65C /* VKIMSessionData.m */; };
+		F39FBBE317BFB4E000D9F65C /* VKIMSessionStateAbstract.m in Sources */ = {isa = PBXBuildFile; fileRef = F39FBBCC17BFB4E000D9F65C /* VKIMSessionStateAbstract.m */; };
+		F39FBBE417BFB4E000D9F65C /* VKIMSessionStateActive.m in Sources */ = {isa = PBXBuildFile; fileRef = F39FBBCE17BFB4E000D9F65C /* VKIMSessionStateActive.m */; };
+		F39FBBE517BFB4E000D9F65C /* VKIMSessionStateCreated.m in Sources */ = {isa = PBXBuildFile; fileRef = F39FBBD017BFB4E000D9F65C /* VKIMSessionStateCreated.m */; };
+		F39FBBE617BFB4E000D9F65C /* VKIMSessionStateNoOp.m in Sources */ = {isa = PBXBuildFile; fileRef = F39FBBD217BFB4E000D9F65C /* VKIMSessionStateNoOp.m */; };
+		F39FBBE717BFB4E000D9F65C /* NSString+Emoji.m in Sources */ = {isa = PBXBuildFile; fileRef = F39FBBD517BFB4E000D9F65C /* NSString+Emoji.m */; };
+		F39FBBE817BFB4E000D9F65C /* VKIMAbstractOperationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = F39FBBD717BFB4E000D9F65C /* VKIMAbstractOperationFactory.m */; };
+		F39FBBE917BFB4E000D9F65C /* VKIMRestOperationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = F39FBBD917BFB4E000D9F65C /* VKIMRestOperationFactory.m */; };
+		F39FBBEA17BFB4E000D9F65C /* VKIMSession.m in Sources */ = {isa = PBXBuildFile; fileRef = F39FBBDB17BFB4E000D9F65C /* VKIMSession.m */; };
+		F39FBBEB17BFB4E000D9F65C /* VKIMSessionErrorFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = F39FBBDD17BFB4E000D9F65C /* VKIMSessionErrorFactory.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F39FBBAB17BFB4B800D9F65C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F39FBB7817BFB4B700D9F65C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F39FBB7F17BFB4B700D9F65C;
+			remoteInfo = VKIMClientTest;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		449EE18AA5784A83B63782C8 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		F39FBB8017BFB4B700D9F65C /* VKIMClientTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKIMClientTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F39FBB8317BFB4B700D9F65C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F39FBB8517BFB4B700D9F65C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F39FBB8717BFB4B700D9F65C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F39FBB8B17BFB4B700D9F65C /* VKIMClientTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VKIMClientTest-Info.plist"; sourceTree = "<group>"; };
+		F39FBB8D17BFB4B700D9F65C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F39FBB8F17BFB4B700D9F65C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F39FBB9117BFB4B700D9F65C /* VKIMClientTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VKIMClientTest-Prefix.pch"; sourceTree = "<group>"; };
+		F39FBB9217BFB4B700D9F65C /* VKIMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VKIMAppDelegate.h; sourceTree = "<group>"; };
+		F39FBB9317BFB4B700D9F65C /* VKIMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VKIMAppDelegate.m; sourceTree = "<group>"; };
+		F39FBB9517BFB4B700D9F65C /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		F39FBB9717BFB4B800D9F65C /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		F39FBB9917BFB4B800D9F65C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		F39FBB9C17BFB4B800D9F65C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		F39FBB9E17BFB4B800D9F65C /* VKIMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VKIMViewController.h; sourceTree = "<group>"; };
+		F39FBB9F17BFB4B800D9F65C /* VKIMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VKIMViewController.m; sourceTree = "<group>"; };
+		F39FBBA617BFB4B800D9F65C /* VKIMClientTestTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VKIMClientTestTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F39FBBA717BFB4B800D9F65C /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		F39FBBAF17BFB4B900D9F65C /* VKIMClientTestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VKIMClientTestTests-Info.plist"; sourceTree = "<group>"; };
+		F39FBBB117BFB4B900D9F65C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F39FBBB317BFB4B900D9F65C /* VKIMClientTestTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VKIMClientTestTests.h; sourceTree = "<group>"; };
+		F39FBBB417BFB4B900D9F65C /* VKIMClientTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VKIMClientTestTests.m; sourceTree = "<group>"; };
+		F39FBBC017BFB4E000D9F65C /* VKIMContactData+stringsMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "VKIMContactData+stringsMapping.h"; sourceTree = "<group>"; };
+		F39FBBC117BFB4E000D9F65C /* VKIMContactData+stringsMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "VKIMContactData+stringsMapping.m"; sourceTree = "<group>"; };
+		F39FBBC217BFB4E000D9F65C /* VKIMContactData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKIMContactData.h; sourceTree = "<group>"; };
+		F39FBBC317BFB4E000D9F65C /* VKIMContactData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKIMContactData.m; sourceTree = "<group>"; };
+		F39FBBC417BFB4E000D9F65C /* VKIMErrorData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKIMErrorData.h; sourceTree = "<group>"; };
+		F39FBBC517BFB4E000D9F65C /* VKIMErrorData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKIMErrorData.m; sourceTree = "<group>"; };
+		F39FBBC617BFB4E000D9F65C /* VKIMMessageData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKIMMessageData.h; sourceTree = "<group>"; };
+		F39FBBC717BFB4E000D9F65C /* VKIMMessageData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKIMMessageData.m; sourceTree = "<group>"; };
+		F39FBBC817BFB4E000D9F65C /* VKIMSessionData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKIMSessionData.h; sourceTree = "<group>"; };
+		F39FBBC917BFB4E000D9F65C /* VKIMSessionData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKIMSessionData.m; sourceTree = "<group>"; };
+		F39FBBCB17BFB4E000D9F65C /* VKIMSessionStateAbstract.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKIMSessionStateAbstract.h; sourceTree = "<group>"; };
+		F39FBBCC17BFB4E000D9F65C /* VKIMSessionStateAbstract.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKIMSessionStateAbstract.m; sourceTree = "<group>"; };
+		F39FBBCD17BFB4E000D9F65C /* VKIMSessionStateActive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKIMSessionStateActive.h; sourceTree = "<group>"; };
+		F39FBBCE17BFB4E000D9F65C /* VKIMSessionStateActive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKIMSessionStateActive.m; sourceTree = "<group>"; };
+		F39FBBCF17BFB4E000D9F65C /* VKIMSessionStateCreated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKIMSessionStateCreated.h; sourceTree = "<group>"; };
+		F39FBBD017BFB4E000D9F65C /* VKIMSessionStateCreated.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKIMSessionStateCreated.m; sourceTree = "<group>"; };
+		F39FBBD117BFB4E000D9F65C /* VKIMSessionStateNoOp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKIMSessionStateNoOp.h; sourceTree = "<group>"; };
+		F39FBBD217BFB4E000D9F65C /* VKIMSessionStateNoOp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKIMSessionStateNoOp.m; sourceTree = "<group>"; };
+		F39FBBD417BFB4E000D9F65C /* NSString+Emoji.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Emoji.h"; sourceTree = "<group>"; };
+		F39FBBD517BFB4E000D9F65C /* NSString+Emoji.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Emoji.m"; sourceTree = "<group>"; };
+		F39FBBD617BFB4E000D9F65C /* VKIMAbstractOperationFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKIMAbstractOperationFactory.h; sourceTree = "<group>"; };
+		F39FBBD717BFB4E000D9F65C /* VKIMAbstractOperationFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKIMAbstractOperationFactory.m; sourceTree = "<group>"; };
+		F39FBBD817BFB4E000D9F65C /* VKIMRestOperationFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKIMRestOperationFactory.h; sourceTree = "<group>"; };
+		F39FBBD917BFB4E000D9F65C /* VKIMRestOperationFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKIMRestOperationFactory.m; sourceTree = "<group>"; };
+		F39FBBDA17BFB4E000D9F65C /* VKIMSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKIMSession.h; sourceTree = "<group>"; };
+		F39FBBDB17BFB4E000D9F65C /* VKIMSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKIMSession.m; sourceTree = "<group>"; };
+		F39FBBDC17BFB4E000D9F65C /* VKIMSessionErrorFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKIMSessionErrorFactory.h; sourceTree = "<group>"; };
+		F39FBBDD17BFB4E000D9F65C /* VKIMSessionErrorFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKIMSessionErrorFactory.m; sourceTree = "<group>"; };
+		FED540493B054B23AA037B96 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F39FBB7D17BFB4B700D9F65C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F39FBB8417BFB4B700D9F65C /* UIKit.framework in Frameworks */,
+				F39FBB8617BFB4B700D9F65C /* Foundation.framework in Frameworks */,
+				F39FBB8817BFB4B700D9F65C /* CoreGraphics.framework in Frameworks */,
+				EECF805025754412BAFBAB2B /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F39FBBA217BFB4B800D9F65C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F39FBBA817BFB4B800D9F65C /* SenTestingKit.framework in Frameworks */,
+				F39FBBA917BFB4B800D9F65C /* UIKit.framework in Frameworks */,
+				F39FBBAA17BFB4B800D9F65C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F39FBB7717BFB4B700D9F65C = {
+			isa = PBXGroup;
+			children = (
+				F39FBBBE17BFB4DF00D9F65C /* VKIMClient */,
+				F39FBB8917BFB4B700D9F65C /* VKIMClientTest */,
+				F39FBBAD17BFB4B800D9F65C /* VKIMClientTestTests */,
+				F39FBB8217BFB4B700D9F65C /* Frameworks */,
+				F39FBB8117BFB4B700D9F65C /* Products */,
+				449EE18AA5784A83B63782C8 /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		F39FBB8117BFB4B700D9F65C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F39FBB8017BFB4B700D9F65C /* VKIMClientTest.app */,
+				F39FBBA617BFB4B800D9F65C /* VKIMClientTestTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F39FBB8217BFB4B700D9F65C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F39FBB8317BFB4B700D9F65C /* UIKit.framework */,
+				F39FBB8517BFB4B700D9F65C /* Foundation.framework */,
+				F39FBB8717BFB4B700D9F65C /* CoreGraphics.framework */,
+				F39FBBA717BFB4B800D9F65C /* SenTestingKit.framework */,
+				FED540493B054B23AA037B96 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F39FBB8917BFB4B700D9F65C /* VKIMClientTest */ = {
+			isa = PBXGroup;
+			children = (
+				F39FBB9217BFB4B700D9F65C /* VKIMAppDelegate.h */,
+				F39FBB9317BFB4B700D9F65C /* VKIMAppDelegate.m */,
+				F39FBB9B17BFB4B800D9F65C /* MainStoryboard.storyboard */,
+				F39FBB9E17BFB4B800D9F65C /* VKIMViewController.h */,
+				F39FBB9F17BFB4B800D9F65C /* VKIMViewController.m */,
+				F39FBB8A17BFB4B700D9F65C /* Supporting Files */,
+			);
+			path = VKIMClientTest;
+			sourceTree = "<group>";
+		};
+		F39FBB8A17BFB4B700D9F65C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F39FBB8B17BFB4B700D9F65C /* VKIMClientTest-Info.plist */,
+				F39FBB8C17BFB4B700D9F65C /* InfoPlist.strings */,
+				F39FBB8F17BFB4B700D9F65C /* main.m */,
+				F39FBB9117BFB4B700D9F65C /* VKIMClientTest-Prefix.pch */,
+				F39FBB9517BFB4B700D9F65C /* Default.png */,
+				F39FBB9717BFB4B800D9F65C /* Default@2x.png */,
+				F39FBB9917BFB4B800D9F65C /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F39FBBAD17BFB4B800D9F65C /* VKIMClientTestTests */ = {
+			isa = PBXGroup;
+			children = (
+				F39FBBB317BFB4B900D9F65C /* VKIMClientTestTests.h */,
+				F39FBBB417BFB4B900D9F65C /* VKIMClientTestTests.m */,
+				F39FBBAE17BFB4B900D9F65C /* Supporting Files */,
+			);
+			path = VKIMClientTestTests;
+			sourceTree = "<group>";
+		};
+		F39FBBAE17BFB4B900D9F65C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F39FBBAF17BFB4B900D9F65C /* VKIMClientTestTests-Info.plist */,
+				F39FBBB017BFB4B900D9F65C /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F39FBBBE17BFB4DF00D9F65C /* VKIMClient */ = {
+			isa = PBXGroup;
+			children = (
+				F39FBBBF17BFB4E000D9F65C /* Model */,
+				F39FBBCA17BFB4E000D9F65C /* SessionState */,
+				F39FBBD317BFB4E000D9F65C /* Tools */,
+				F39FBBD617BFB4E000D9F65C /* VKIMAbstractOperationFactory.h */,
+				F39FBBD717BFB4E000D9F65C /* VKIMAbstractOperationFactory.m */,
+				F39FBBD817BFB4E000D9F65C /* VKIMRestOperationFactory.h */,
+				F39FBBD917BFB4E000D9F65C /* VKIMRestOperationFactory.m */,
+				F39FBBDA17BFB4E000D9F65C /* VKIMSession.h */,
+				F39FBBDB17BFB4E000D9F65C /* VKIMSession.m */,
+				F39FBBDC17BFB4E000D9F65C /* VKIMSessionErrorFactory.h */,
+				F39FBBDD17BFB4E000D9F65C /* VKIMSessionErrorFactory.m */,
+			);
+			name = VKIMClient;
+			path = ../VKIMClient;
+			sourceTree = "<group>";
+		};
+		F39FBBBF17BFB4E000D9F65C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F39FBBC017BFB4E000D9F65C /* VKIMContactData+stringsMapping.h */,
+				F39FBBC117BFB4E000D9F65C /* VKIMContactData+stringsMapping.m */,
+				F39FBBC217BFB4E000D9F65C /* VKIMContactData.h */,
+				F39FBBC317BFB4E000D9F65C /* VKIMContactData.m */,
+				F39FBBC417BFB4E000D9F65C /* VKIMErrorData.h */,
+				F39FBBC517BFB4E000D9F65C /* VKIMErrorData.m */,
+				F39FBBC617BFB4E000D9F65C /* VKIMMessageData.h */,
+				F39FBBC717BFB4E000D9F65C /* VKIMMessageData.m */,
+				F39FBBC817BFB4E000D9F65C /* VKIMSessionData.h */,
+				F39FBBC917BFB4E000D9F65C /* VKIMSessionData.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F39FBBCA17BFB4E000D9F65C /* SessionState */ = {
+			isa = PBXGroup;
+			children = (
+				F39FBBCB17BFB4E000D9F65C /* VKIMSessionStateAbstract.h */,
+				F39FBBCC17BFB4E000D9F65C /* VKIMSessionStateAbstract.m */,
+				F39FBBCD17BFB4E000D9F65C /* VKIMSessionStateActive.h */,
+				F39FBBCE17BFB4E000D9F65C /* VKIMSessionStateActive.m */,
+				F39FBBCF17BFB4E000D9F65C /* VKIMSessionStateCreated.h */,
+				F39FBBD017BFB4E000D9F65C /* VKIMSessionStateCreated.m */,
+				F39FBBD117BFB4E000D9F65C /* VKIMSessionStateNoOp.h */,
+				F39FBBD217BFB4E000D9F65C /* VKIMSessionStateNoOp.m */,
+			);
+			path = SessionState;
+			sourceTree = "<group>";
+		};
+		F39FBBD317BFB4E000D9F65C /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				F39FBBD417BFB4E000D9F65C /* NSString+Emoji.h */,
+				F39FBBD517BFB4E000D9F65C /* NSString+Emoji.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F39FBB7F17BFB4B700D9F65C /* VKIMClientTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F39FBBB817BFB4B900D9F65C /* Build configuration list for PBXNativeTarget "VKIMClientTest" */;
+			buildPhases = (
+				00FBE902AE964CD98C03B86A /* Check Pods Manifest.lock */,
+				F39FBB7C17BFB4B700D9F65C /* Sources */,
+				F39FBB7D17BFB4B700D9F65C /* Frameworks */,
+				F39FBB7E17BFB4B700D9F65C /* Resources */,
+				A621DB6A719541718A8C6494 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VKIMClientTest;
+			productName = VKIMClientTest;
+			productReference = F39FBB8017BFB4B700D9F65C /* VKIMClientTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F39FBBA517BFB4B800D9F65C /* VKIMClientTestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F39FBBBB17BFB4B900D9F65C /* Build configuration list for PBXNativeTarget "VKIMClientTestTests" */;
+			buildPhases = (
+				F39FBBA117BFB4B800D9F65C /* Sources */,
+				F39FBBA217BFB4B800D9F65C /* Frameworks */,
+				F39FBBA317BFB4B800D9F65C /* Resources */,
+				F39FBBA417BFB4B800D9F65C /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F39FBBAC17BFB4B800D9F65C /* PBXTargetDependency */,
+			);
+			name = VKIMClientTestTests;
+			productName = VKIMClientTestTests;
+			productReference = F39FBBA617BFB4B800D9F65C /* VKIMClientTestTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F39FBB7817BFB4B700D9F65C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = VKIM;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = kovtash.com;
+			};
+			buildConfigurationList = F39FBB7B17BFB4B700D9F65C /* Build configuration list for PBXProject "VKIMClientTest" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F39FBB7717BFB4B700D9F65C;
+			productRefGroup = F39FBB8117BFB4B700D9F65C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F39FBB7F17BFB4B700D9F65C /* VKIMClientTest */,
+				F39FBBA517BFB4B800D9F65C /* VKIMClientTestTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F39FBB7E17BFB4B700D9F65C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F39FBB8E17BFB4B700D9F65C /* InfoPlist.strings in Resources */,
+				F39FBB9617BFB4B700D9F65C /* Default.png in Resources */,
+				F39FBB9817BFB4B800D9F65C /* Default@2x.png in Resources */,
+				F39FBB9A17BFB4B800D9F65C /* Default-568h@2x.png in Resources */,
+				F39FBB9D17BFB4B800D9F65C /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F39FBBA317BFB4B800D9F65C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F39FBBB217BFB4B900D9F65C /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		00FBE902AE964CD98C03B86A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A621DB6A719541718A8C6494 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F39FBBA417BFB4B800D9F65C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F39FBB7C17BFB4B700D9F65C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F39FBB9017BFB4B700D9F65C /* main.m in Sources */,
+				F39FBB9417BFB4B700D9F65C /* VKIMAppDelegate.m in Sources */,
+				F39FBBA017BFB4B800D9F65C /* VKIMViewController.m in Sources */,
+				F39FBBDE17BFB4E000D9F65C /* VKIMContactData+stringsMapping.m in Sources */,
+				F39FBBDF17BFB4E000D9F65C /* VKIMContactData.m in Sources */,
+				F39FBBE017BFB4E000D9F65C /* VKIMErrorData.m in Sources */,
+				F39FBBE117BFB4E000D9F65C /* VKIMMessageData.m in Sources */,
+				F39FBBE217BFB4E000D9F65C /* VKIMSessionData.m in Sources */,
+				F39FBBE317BFB4E000D9F65C /* VKIMSessionStateAbstract.m in Sources */,
+				F39FBBE417BFB4E000D9F65C /* VKIMSessionStateActive.m in Sources */,
+				F39FBBE517BFB4E000D9F65C /* VKIMSessionStateCreated.m in Sources */,
+				F39FBBE617BFB4E000D9F65C /* VKIMSessionStateNoOp.m in Sources */,
+				F39FBBE717BFB4E000D9F65C /* NSString+Emoji.m in Sources */,
+				F39FBBE817BFB4E000D9F65C /* VKIMAbstractOperationFactory.m in Sources */,
+				F39FBBE917BFB4E000D9F65C /* VKIMRestOperationFactory.m in Sources */,
+				F39FBBEA17BFB4E000D9F65C /* VKIMSession.m in Sources */,
+				F39FBBEB17BFB4E000D9F65C /* VKIMSessionErrorFactory.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F39FBBA117BFB4B800D9F65C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F39FBBB517BFB4B900D9F65C /* VKIMClientTestTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F39FBBAC17BFB4B800D9F65C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F39FBB7F17BFB4B700D9F65C /* VKIMClientTest */;
+			targetProxy = F39FBBAB17BFB4B800D9F65C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F39FBB8C17BFB4B700D9F65C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F39FBB8D17BFB4B700D9F65C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F39FBB9B17BFB4B800D9F65C /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F39FBB9C17BFB4B800D9F65C /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		F39FBBB017BFB4B900D9F65C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F39FBBB117BFB4B900D9F65C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F39FBBB617BFB4B900D9F65C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F39FBBB717BFB4B900D9F65C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F39FBBB917BFB4B900D9F65C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 449EE18AA5784A83B63782C8 /* Pods.xcconfig */;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VKIMClientTest/VKIMClientTest-Prefix.pch";
+				INFOPLIST_FILE = "VKIMClientTest/VKIMClientTest-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F39FBBBA17BFB4B900D9F65C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 449EE18AA5784A83B63782C8 /* Pods.xcconfig */;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VKIMClientTest/VKIMClientTest-Prefix.pch";
+				INFOPLIST_FILE = "VKIMClientTest/VKIMClientTest-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		F39FBBBC17BFB4B900D9F65C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/VKIMClientTest.app/VKIMClientTest";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VKIMClientTest/VKIMClientTest-Prefix.pch";
+				INFOPLIST_FILE = "VKIMClientTestTests/VKIMClientTestTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		F39FBBBD17BFB4B900D9F65C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/VKIMClientTest.app/VKIMClientTest";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VKIMClientTest/VKIMClientTest-Prefix.pch";
+				INFOPLIST_FILE = "VKIMClientTestTests/VKIMClientTestTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F39FBB7B17BFB4B700D9F65C /* Build configuration list for PBXProject "VKIMClientTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F39FBBB617BFB4B900D9F65C /* Debug */,
+				F39FBBB717BFB4B900D9F65C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F39FBBB817BFB4B900D9F65C /* Build configuration list for PBXNativeTarget "VKIMClientTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F39FBBB917BFB4B900D9F65C /* Debug */,
+				F39FBBBA17BFB4B900D9F65C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F39FBBBB17BFB4B900D9F65C /* Build configuration list for PBXNativeTarget "VKIMClientTestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F39FBBBC17BFB4B900D9F65C /* Debug */,
+				F39FBBBD17BFB4B900D9F65C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F39FBB7817BFB4B700D9F65C /* Project object */;
+}
