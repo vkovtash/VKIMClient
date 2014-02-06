@@ -20,15 +20,9 @@
 - (NSString *) clientID{
     NSString *clientID = nil;
     UIDevice *currentDevice = [UIDevice currentDevice];
-#if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_6_0
     if ([currentDevice respondsToSelector:@selector(identifierForVendor)]){
         clientID = [currentDevice.identifierForVendor UUIDString];
     }
-#else
-    if ([currentDevice respondsToSelector:@selector(uniqueIdentifier)]){
-        clientID = [currentDevice uniqueIdentifier];
-    }
-#endif
     return clientID;
 }
 

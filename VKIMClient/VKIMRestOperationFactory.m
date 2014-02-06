@@ -32,14 +32,16 @@ NSString *const VKIMResponseErrorKey = @"error";
     if (sessionResponseDescriptor == nil) {
         RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[VKIMSessionData class]];
         [mapping addAttributeMappingsFromDictionary:@{
-         @"token": @"token",
-         @"session_id": @"sessionID",
-         @"jid": @"jid"
-         }];
+                                                      @"token": @"token",
+                                                      @"session_id": @"sessionID",
+                                                      @"jid": @"jid"
+                                                      }];
         sessionResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:mapping
+                                                                                 method:RKRequestMethodAny
                                                                             pathPattern:nil
                                                                                 keyPath:VKIMResponseSessionKey
-                                                                            statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+                                                                            statusCodes:RKStatusCodeIndexSetForClass\
+                                     (RKStatusCodeClassSuccessful)];
     }
     return sessionResponseDescriptor;
 }
@@ -49,17 +51,18 @@ NSString *const VKIMResponseErrorKey = @"error";
     if (contactsResponseDescriptor == nil) {
         RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[VKIMContactData class]];
         [mapping addAttributeMappingsFromDictionary:@{
-         @"id": @"contactID",
-         @"jid": @"jid",
-         @"name": @"name",
-         @"groups": @"groups",
-         @"show":@"show",
-         @"status":@"status",
-         @"authorization":@"authorization",
-         @"event_id":@"eventID",
-         @"read_offset":@"readOffset"
-         }];
+                                                      @"id": @"contactID",
+                                                      @"jid": @"jid",
+                                                      @"name": @"name",
+                                                      @"groups": @"groups",
+                                                      @"show":@"show",
+                                                      @"status":@"status",
+                                                      @"authorization":@"authorization",
+                                                      @"event_id":@"eventID",
+                                                      @"read_offset":@"readOffset"
+                                                      }];
         contactsResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:mapping
+                                                                                  method:RKRequestMethodAny
                                                                              pathPattern:nil
                                                                                  keyPath:VKIMResponseMultipleContactsKey
                                                                              statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
@@ -72,18 +75,19 @@ NSString *const VKIMResponseErrorKey = @"error";
     if (messagesResponseDescriptor == nil) {
         RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[VKIMMessageData class]];
         [mapping addAttributeMappingsFromDictionary:@{
-         @"event_id": @"eventID",
-         @"message_id":@"messageID",
-         @"text": @"text",
-         @"inbound": @"inbound",
-         @"delivered":@"delivered",
-         @"contact_id":@"contactID",
-         @"timestamp":@"timestamp"
-         }];
+                                                      @"event_id": @"eventID",
+                                                      @"message_id":@"messageID",
+                                                      @"text": @"text",
+                                                      @"inbound": @"inbound",
+                                                      @"delivered":@"delivered",
+                                                      @"contact_id":@"contactID",
+                                                      @"timestamp":@"timestamp"
+                                                      }];
         messagesResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:mapping
-                                                                            pathPattern:nil
-                                                                                keyPath:VKIMResponseMultipleMessagesKey
-                                                                            statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+                                                                                  method:RKRequestMethodAny
+                                                                             pathPattern:nil
+                                                                                 keyPath:VKIMResponseMultipleMessagesKey
+                                                                             statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     }
     return messagesResponseDescriptor;
 }
@@ -93,8 +97,8 @@ NSString *const VKIMResponseErrorKey = @"error";
     if (errorResponseDescriptor == nil) {
         RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[VKIMErrorData class]];
         [mapping addAttributeMappingsFromDictionary:@{
-         @"code": @"code"
-         }];
+                                                      @"code": @"code"
+                                                      }];
         
         // status codes in range 400-599
         NSRange errorCodesRange;
@@ -104,9 +108,10 @@ NSString *const VKIMResponseErrorKey = @"error";
         NSIndexSet *errorCodesIndexSet = [[NSIndexSet alloc] initWithIndexesInRange:errorCodesRange];
         
         errorResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:mapping
-                                                                            pathPattern:nil
-                                                                                keyPath:VKIMResponseErrorKey
-                                                                            statusCodes:errorCodesIndexSet];
+                                                                               method:RKRequestMethodAny
+                                                                          pathPattern:nil
+                                                                              keyPath:VKIMResponseErrorKey
+                                                                          statusCodes:errorCodesIndexSet];
     }
     return errorResponseDescriptor;
 }
@@ -116,11 +121,12 @@ NSString *const VKIMResponseErrorKey = @"error";
     if (messagesRequestDescriptor == nil) {
         RKObjectMapping *mapping = [RKObjectMapping requestMapping];
         [mapping addAttributeMappingsFromDictionary:@{
-         @"text": @"text",
-         }];
+                                                      @"text": @"text",
+                                                      }];
         messagesRequestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:mapping
                                                                           objectClass:[VKIMMessageData class]
-                                                                          rootKeyPath:VKIMResponseMultipleMessagesKey];
+                                                                          rootKeyPath:VKIMResponseMultipleMessagesKey
+                                                                               method:RKRequestMethodAny];
     }
     
     return messagesRequestDescriptor;
@@ -131,16 +137,17 @@ NSString *const VKIMResponseErrorKey = @"error";
     if (contactUpdateRequestDescriptor == nil) {
         RKObjectMapping *mapping = [RKObjectMapping requestMapping];
         [mapping addAttributeMappingsFromDictionary:@{
-         @"contactID": @"id",
-         @"name":@"name",
-         @"groups": @"groups",
-         @"readOffset":@"read_offset",
-         @"jid":@"jid",
-         @"authorization":@"authorization"
-         }];
+                                                      @"contactID": @"id",
+                                                      @"name":@"name",
+                                                      @"groups": @"groups",
+                                                      @"readOffset":@"read_offset",
+                                                      @"jid":@"jid",
+                                                      @"authorization":@"authorization"
+                                                      }];
         contactUpdateRequestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:mapping
                                                                                objectClass:[VKIMContactData class]
-                                                                               rootKeyPath:VKIMResponseContactKey];
+                                                                               rootKeyPath:VKIMResponseContactKey
+                                                                                    method:RKRequestMethodAny];
     }
     
     return contactUpdateRequestDescriptor;
@@ -163,10 +170,10 @@ NSString *const VKIMResponseErrorKey = @"error";
 }
 
 - (id)authenticatedObjectRequestOperationWithObject:(id)object
-                                           method:(RKRequestMethod)method
-                                             path:(NSString *)path
+                                             method:(RKRequestMethod)method
+                                               path:(NSString *)path
                                          parameters:(NSDictionary *)parameters
-                                          token:(NSString *) token{
+                                              token:(NSString *) token{
     RKObjectRequestOperation *operation = nil;
     NSMutableURLRequest *urlRequest = [self.manager requestWithObject:object
                                                                method:method
@@ -178,9 +185,9 @@ NSString *const VKIMResponseErrorKey = @"error";
 }
 
 - (id)authenticatedRequestOperationForObjectsAtPathForRelationship:(NSString *) relationship
-                                                 ofObject:(id)object
-                                               parameters:(NSDictionary *)parameters
-                                                    token:(NSString *) token{
+                                                          ofObject:(id)object
+                                                        parameters:(NSDictionary *)parameters
+                                                             token:(NSString *) token{
     RKObjectRequestOperation *operation = nil;
     NSMutableURLRequest *urlRequest = [self.manager requestWithPathForRelationship:relationship
                                                                           ofObject:object
@@ -209,14 +216,14 @@ NSString *const VKIMResponseErrorKey = @"error";
     
     RKObjectRequestOperation *operation = [[RKObjectRequestOperation alloc] initWithRequest:urlRequest
                                                                         responseDescriptors:@[[self sessionResponseDescriptor],
-                                                                                             [self errorResponseDescriptor]]];
+                                                                                              [self errorResponseDescriptor]]];
     [operation
      setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *result){
-        if ([[result array] lastObject] != nil && [[[result array] lastObject] isKindOfClass:[VKIMSessionData class]]) {
-            successBlock ? successBlock([[result array] lastObject]) : nil;
-        }else{
-            failureBlock ? failureBlock([VKIMErrorData sessionError]) : nil;
-        }
+         if ([[result array] lastObject] != nil && [[[result array] lastObject] isKindOfClass:[VKIMSessionData class]]) {
+             successBlock ? successBlock([[result array] lastObject]) : nil;
+         }else{
+             failureBlock ? failureBlock([VKIMErrorData sessionError]) : nil;
+         }
      }
      failure:^(RKObjectRequestOperation *operation, NSError *error){
          NSError *returnedError = [self createError:error];
@@ -325,9 +332,9 @@ NSString *const VKIMResponseErrorKey = @"error";
 }
 
 - (RKObjectRequestOperation *) sessionFeedPollOperation:(VKIMSessionData *) session
-                                            WithOffset:(NSUInteger) offset
-                                               Success:(void(^)(NSDictionary *feed)) successBlock
-                                               Failure:(void(^)(VKIMSessionData *session, NSError *error)) failureBlock{
+                                             WithOffset:(NSUInteger) offset
+                                                Success:(void(^)(NSDictionary *feed)) successBlock
+                                                Failure:(void(^)(VKIMSessionData *session, NSError *error)) failureBlock{
     RKObjectRequestOperation *operation = [self authenticatedRequestOperationForObjectsAtPathForRelationship:@"feed"
                                                                                                     ofObject:session
                                                                                                   parameters:@{ @"offset":[NSNumber numberWithInteger:offset],
@@ -364,7 +371,7 @@ NSString *const VKIMResponseErrorKey = @"error";
 
 - (NSOperation *) contactUpdateOperation:(VKIMContactData *) contact
                              WithSuccess:(void(^)(VKIMContactData *contactData)) successBlock
-                                 Failure:(void(^)(VKIMContactData *contact, NSError *error)) failureBlock{    
+                                 Failure:(void(^)(VKIMContactData *contact, NSError *error)) failureBlock{
     RKObjectRequestOperation *operation = [self authenticatedObjectRequestOperationWithObject:contact
                                                                                        method:RKRequestMethodPUT
                                                                                          path:nil parameters:nil
@@ -402,8 +409,8 @@ NSString *const VKIMResponseErrorKey = @"error";
 }
 
 - (NSOperation *) contactAddOperation:(VKIMContactData *) contact
-                             WithSuccess:(void(^)(VKIMContactData *contactData)) successBlock
-                                 Failure:(void(^)(VKIMContactData *contact, NSError *error)) failureBlock{
+                          WithSuccess:(void(^)(VKIMContactData *contactData)) successBlock
+                              Failure:(void(^)(VKIMContactData *contact, NSError *error)) failureBlock{
     RKObjectRequestOperation *operation = [self authenticatedObjectRequestOperationWithObject:contact
                                                                                        method:RKRequestMethodPOST
                                                                                          path:nil parameters:nil
