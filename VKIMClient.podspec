@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'VKIMClient'
-  s.version      = '0.5.1'
+  s.version      = '0.5.2'
   s.summary      = "Client library for https://github.com/Unact/REST-XMPP-Client server."
   s.homepage     = 'https://github.com/vkovtash/VKIMClient'
 
