@@ -27,13 +27,20 @@
 }
 
 - (BOOL) isEqual:(id)object{
-    if (self.messageID && [object messageID]){
-        return [self.messageID isEqualToString:[object messageID]];
+    if ([object isKindOfClass:[self class]]) {
+        if (self.messageID && [object messageID]){
+            return self.eventID == [object eventID] && [self.messageID isEqualToString:[object messageID]];
+        }
+        else{
+            return [self.contactID isEqualToString:[object contactID]]
+            && [self.text isEqualToString:[object text]]
+            && self.eventID == [object eventID]
+            && self.inbound == [object inbound];
+        }
     }
-    else{
-        return [self.contactID isEqualToString:[object contactID]]
-        && [self.text isEqualToString:[object text]]
-        && self.inbound == [object inbound];
+    else {
+        return NO;
     }
+
 }
 @end
