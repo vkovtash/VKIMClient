@@ -59,7 +59,8 @@ NSString *const VKIMResponseErrorKey = @"error";
                                                       @"status":@"status",
                                                       @"authorization":@"authorization",
                                                       @"event_id":@"eventID",
-                                                      @"read_offset":@"readOffset"
+                                                      @"read_offset":@"readOffset",
+                                                      @"history_offset":@"historyOffset"
                                                       }];
         contactsResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:mapping
                                                                                   method:RKRequestMethodAny
@@ -76,6 +77,7 @@ NSString *const VKIMResponseErrorKey = @"error";
         RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[VKIMMessageData class]];
         [mapping addAttributeMappingsFromDictionary:@{
                                                       @"event_id": @"eventID",
+                                                      @"sort_id":@"sortID",
                                                       @"message_id":@"messageID",
                                                       @"text": @"text",
                                                       @"inbound": @"inbound",
@@ -141,6 +143,7 @@ NSString *const VKIMResponseErrorKey = @"error";
                                                       @"name":@"name",
                                                       @"groups": @"groups",
                                                       @"readOffset":@"read_offset",
+                                                      @"historyOffset":@"history_offset",
                                                       @"jid":@"jid",
                                                       @"authorization":@"authorization"
                                                       }];

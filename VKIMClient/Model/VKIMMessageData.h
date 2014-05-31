@@ -17,6 +17,7 @@
 @property (strong,nonatomic) VKIMContactData *contact;
 @property (strong,nonatomic) NSString *contactID;
 @property (nonatomic) NSUInteger eventID;
+@property (nonatomic) NSUInteger sortID;
 @property (nonatomic) NSNumber *timestamp;
 @property (readonly,nonatomic) NSDate *messageDate;
 @end
