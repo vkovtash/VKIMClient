@@ -30,6 +30,7 @@ typedef enum VKIMContactAuthorization {
 @property (strong,nonatomic) NSString *status;
 @property (assign,nonatomic) VKIMContactState state;
 @property (assign,nonatomic) VKIMContactAuthorization authState;
+@property (nonatomic) NSUInteger historyOffset;
 @property (nonatomic) NSUInteger readOffset;
 @property (nonatomic) NSUInteger eventID;
 @property (strong,nonatomic) VKIMSessionData *session;
