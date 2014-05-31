@@ -28,7 +28,10 @@
 
 - (BOOL) isEqual:(id)object{
     if ([object isKindOfClass:[self class]]) {
-        if (self.messageID && [object messageID]){
+        if (self.sortID && [object sortID]) {
+            return self.sortID == [object sortID];
+        }
+        else if (self.messageID && [object messageID]){
             return [self.messageID isEqualToString:[object messageID]];
         }
         else{
