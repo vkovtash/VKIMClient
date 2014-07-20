@@ -13,7 +13,9 @@
 NSString *const VKIMResponseSessionKey = @"session";
 NSString *const VKIMResponseMultipleMessagesKey = @"messages";
 NSString *const VKIMResponseMultipleContactsKey = @"contacts";
+NSString *const VKIMResponseMultipleMucsKey = @"mucs";
 NSString *const VKIMResponseContactKey = @"contact";
+NSString *const VKIMResponseMucKey = @"muc";
 NSString *const VKIMResponseErrorKey = @"error";
 
 @interface VKIMRestOperationFactory()
@@ -69,6 +71,25 @@ NSString *const VKIMResponseErrorKey = @"error";
                                                                              statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
     }
     return contactsResponseDescriptor;
+}
+
+- (RKResponseDescriptor *) mucsResponseDescriptor{
+    static RKResponseDescriptor *mucsResponseDescriptor = nil;
+    if (mucsResponseDescriptor == nil) {
+        RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[VKIMMucData class]];
+        [mapping addAttributeMappingsFromDictionary:@{
+         @"id": @"mucID",
+         @"jid": @"jid",
+         @"event_id":@"eventID",
+         @"read_offset":@"readOffset"
+         }];
+        mucsResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:mapping
+                                                                                  method:RKRequestMethodAny
+                                                                             pathPattern:nil
+                                                                                 keyPath:VKIMResponseMultipleMucsKey
+                                                                             statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+    }
+    return mucsResponseDescriptor;
 }
 
 - (RKResponseDescriptor *) messagesResponseDescriptor{
@@ -154,6 +175,24 @@ NSString *const VKIMResponseErrorKey = @"error";
     }
     
     return contactUpdateRequestDescriptor;
+}
+
+- (RKRequestDescriptor *) mucUpdateRequestDescriptor{
+    static RKRequestDescriptor *mucUpdateRequestDescriptor = nil;
+    if (mucUpdateRequestDescriptor == nil) {
+        RKObjectMapping *mapping = [RKObjectMapping requestMapping];
+        [mapping addAttributeMappingsFromDictionary:@{
+         @"mucID": @"id",
+         @"readOffset":@"read_offset",
+         @"jid":@"jid",
+         }];
+        mucUpdateRequestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:mapping
+                                                                               objectClass:[VKIMMucData class]
+                                                                               rootKeyPath:VKIMResponseMucKey
+                                                                                    method:RKRequestMethodAny];
+    }
+    
+    return mucUpdateRequestDescriptor;
 }
 
 #pragma mark - Private methods
@@ -432,6 +471,66 @@ NSString *const VKIMResponseErrorKey = @"error";
     return operation;
 }
 
+- (NSOperation *) mucCreateOperation:(VKIMMucData *) mucData
+                         WithSuccess:(void(^)(VKIMMucData *mucData)) successBlock
+                             Failure:(void(^)(VKIMMucData *mucData, NSError *error)) failureBlock{
+    RKObjectRequestOperation *operation = [self authenticatedObjectRequestOperationWithObject:mucData
+                                                                                       method:RKRequestMethodPOST
+                                                                                         path:nil parameters:nil
+                                                                                        token:mucData.session.token];
+    
+    [operation
+     setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *result){
+         if ([[result array] lastObject] != nil && [[[result array] lastObject] isKindOfClass:[VKIMMucData class]]) {
+             successBlock ? successBlock([[result array] lastObject]) : nil;
+         }
+     }
+     failure:^(RKObjectRequestOperation *operation, NSError *error){
+         NSError *returnedError = [self createError:error];
+         failureBlock ? failureBlock(mucData, returnedError) : nil;
+     }];
+    return operation;
+}
+
+- (NSOperation *) mucUpdateOperation:(VKIMMucData *) mucData
+                         WithSuccess:(void(^)(VKIMMucData *mucData)) successBlock
+                             Failure:(void(^)(VKIMMucData *mucData, NSError *error)) failureBlock {
+    RKObjectRequestOperation *operation = [self authenticatedObjectRequestOperationWithObject:mucData
+                                                                                       method:RKRequestMethodPUT
+                                                                                         path:nil parameters:nil
+                                                                                        token:mucData.session.token];
+    
+    [operation
+     setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *result){
+         if ([[result array] lastObject] != nil && [[[result array] lastObject] isKindOfClass:[VKIMMucData class]]) {
+             successBlock ? successBlock([[result array] lastObject]) : nil;
+         }
+     }
+     failure:^(RKObjectRequestOperation *operation, NSError *error){
+         NSError *returnedError = [self createError:error];
+         failureBlock ? failureBlock(mucData, returnedError) : nil;
+     }];
+    return operation;
+}
+
+- (NSOperation *) mucDeleteOperation:(VKIMMucData *) mucData
+                         WithSuccess:(void(^)(VKIMMucData *mucData)) successBlock
+                             Failure:(void(^)(VKIMMucData *mucData, NSError *error)) failureBlock {
+    RKObjectRequestOperation *operation = [self authenticatedObjectRequestOperationWithObject:mucData
+                                                                                       method:RKRequestMethodDELETE
+                                                                                         path:nil parameters:nil
+                                                                                        token:mucData.session.token];
+    [operation
+     setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *result){
+         successBlock ? successBlock([[result array] lastObject]) : nil;
+     }
+     failure:^(RKObjectRequestOperation *operation, NSError *error){
+         NSError *returnedError = [self createError:error];
+         failureBlock ? failureBlock(mucData, returnedError) : nil;
+     }];
+    return operation;
+}
+
 - (RKObjectRequestOperation *) messageSendOperation:(VKIMMessageData *) message
                                         WithSuccess:(void(^)(NSArray *messages)) successBlock
                                             Failure:(void(^)(VKIMMessageData *message, NSError *error)) failureBlock;{
@@ -459,10 +558,12 @@ NSString *const VKIMResponseErrorKey = @"error";
         [self.manager setRequestSerializationMIMEType:RKMIMETypeJSON];
         [self.manager addResponseDescriptor:[self sessionResponseDescriptor]];
         [self.manager addResponseDescriptor:[self contactsResponseDescriptor]];
+        [self.manager addResponseDescriptor:[self mucsResponseDescriptor]];
         [self.manager addResponseDescriptor:[self messagesResponseDescriptor]];
         [self.manager addResponseDescriptor:[self errorResponseDescriptor]];
         [self.manager addRequestDescriptor:[self messagesRequestDescriptor]];
         [self.manager addRequestDescriptor:[self contactUpdateRequestDescriptor]];
+        [self.manager addRequestDescriptor:[self mucUpdateRequestDescriptor]];
         
         
         [self.manager.router.routeSet addRoute:[RKRoute routeWithClass:[VKIMSessionData class]
@@ -483,6 +584,19 @@ NSString *const VKIMResponseErrorKey = @"error";
         [self.manager.router.routeSet addRoute:[RKRoute routeWithClass:[VKIMContactData class]
                                                            pathPattern:@"sessions/:session.sessionID/contacts"
                                                                 method:RKRequestMethodPOST]];
+        
+        
+        [self.manager.router.routeSet addRoute:[RKRoute routeWithClass:[VKIMMucData class]
+                                                           pathPattern:@"sessions/:session.sessionID/mucs/:mucID"
+                                                                method:RKRequestMethodPUT]];
+        [self.manager.router.routeSet addRoute:[RKRoute routeWithClass:[VKIMMucData class]
+                                                           pathPattern:@"sessions/:session.sessionID/mucs/:mucID"
+                                                                method:RKRequestMethodDELETE]];
+        [self.manager.router.routeSet addRoute:[RKRoute routeWithClass:[VKIMMucData class]
+                                                           pathPattern:@"sessions/:session.sessionID/mucs"
+                                                                method:RKRequestMethodPOST]];
+        
+        
         [self.manager.router.routeSet addRoute:[RKRoute routeWithRelationshipName:@"messages"
                                                                       objectClass:[VKIMSessionData class]
                                                                       pathPattern:@"sessions/:sessionID/messages"
@@ -490,6 +604,10 @@ NSString *const VKIMResponseErrorKey = @"error";
         [self.manager.router.routeSet addRoute:[RKRoute routeWithRelationshipName:@"contacts"
                                                                       objectClass:[VKIMSessionData class]
                                                                       pathPattern:@"sessions/:sessionID/contacts"
+                                                                           method:RKRequestMethodGET]];
+        [self.manager.router.routeSet addRoute:[RKRoute routeWithRelationshipName:@"mucs"
+                                                                      objectClass:[VKIMSessionData class]
+                                                                      pathPattern:@"sessions/:sessionID/mucs"
                                                                            method:RKRequestMethodGET]];
         [self.manager.router.routeSet addRoute:[RKRoute routeWithRelationshipName:@"feed"
                                                                       objectClass:[VKIMSessionData class]

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EECF805025754412BAFBAB2B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FED540493B054B23AA037B96 /* libPods.a */; };
+		F39727C318A77450004B03DF /* VKIMMucData.m in Sources */ = {isa = PBXBuildFile; fileRef = F39727C218A77450004B03DF /* VKIMMucData.m */; };
 		F39FBB8417BFB4B700D9F65C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39FBB8317BFB4B700D9F65C /* UIKit.framework */; };
 		F39FBB8617BFB4B700D9F65C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39FBB8517BFB4B700D9F65C /* Foundation.framework */; };
 		F39FBB8817BFB4B700D9F65C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39FBB8717BFB4B700D9F65C /* CoreGraphics.framework */; };
@@ -52,6 +53,8 @@
 
 /* Begin PBXFileReference section */
 		449EE18AA5784A83B63782C8 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		F39727C118A77450004B03DF /* VKIMMucData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKIMMucData.h; sourceTree = "<group>"; };
+		F39727C218A77450004B03DF /* VKIMMucData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKIMMucData.m; sourceTree = "<group>"; };
 		F39FBB8017BFB4B700D9F65C /* VKIMClientTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKIMClientTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F39FBB8317BFB4B700D9F65C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F39FBB8517BFB4B700D9F65C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -241,6 +244,8 @@
 				F39FBBC717BFB4E000D9F65C /* VKIMMessageData.m */,
 				F39FBBC817BFB4E000D9F65C /* VKIMSessionData.h */,
 				F39FBBC917BFB4E000D9F65C /* VKIMSessionData.m */,
+				F39727C118A77450004B03DF /* VKIMMucData.h */,
+				F39727C218A77450004B03DF /* VKIMMucData.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -429,6 +434,7 @@
 				F39FBBE917BFB4E000D9F65C /* VKIMRestOperationFactory.m in Sources */,
 				F39FBBEA17BFB4E000D9F65C /* VKIMSession.m in Sources */,
 				F39FBBEB17BFB4E000D9F65C /* VKIMSessionErrorFactory.m in Sources */,
+				F39727C318A77450004B03DF /* VKIMMucData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

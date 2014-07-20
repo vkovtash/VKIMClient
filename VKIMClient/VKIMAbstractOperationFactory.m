@@ -117,9 +117,44 @@
     return nil;
 }
 
+- (NSOperation *) mucCreateOperation:(VKIMMucData *) mucData
+                         WithSuccess:(void(^)(VKIMMucData *mucData)) successBlock
+                             Failure:(void(^)(VKIMMucData *mucData, NSError *error)) failureBlock{
+    return nil;
+}
+
+- (NSOperation *) mucUpdateOperation:(VKIMMucData *) mucData
+                         WithSuccess:(void(^)(VKIMMucData *mucData)) successBlock
+                             Failure:(void(^)(VKIMMucData *mucData, NSError *error)) failureBlock {
+    return nil;
+}
+
+- (NSOperation *) mucDeleteOperation:(VKIMMucData *) mucData
+                         WithSuccess:(void(^)(VKIMMucData *mucData)) successBlock
+                             Failure:(void(^)(VKIMMucData *mucData, NSError *error)) failureBlock {
+    return nil;
+}
+
 - (NSOperation *) messageSendOperation:(VKIMMessageData *) message
                            WithSuccess:(void(^)(NSArray *messages)) successBlock
                                Failure:(void(^)(VKIMMessageData *message, NSError *error)) failureBlock{
     return nil;
 }
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

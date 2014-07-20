@@ -11,6 +11,7 @@
 #import "VKIMContactData.h"
 #import "VKIMMessageData.h"
 #import "VKIMErrorData.h"
+#import "VKIMMucData.h"
 
 extern NSString *const VKIMResponseSessionKey;
 extern NSString *const VKIMResponseMultipleMessagesKey;
@@ -77,7 +78,27 @@ extern NSString *const VKIMResponseErrorKey;
                              WithSuccess:(void(^)(VKIMContactData *contactData)) successBlock
                                  Failure:(void(^)(VKIMContactData *contact, NSError *error)) failureBlock;
 
+- (NSOperation *) mucCreateOperation:(VKIMMucData *) mucData
+                         WithSuccess:(void(^)(VKIMMucData *mucData)) successBlock
+                             Failure:(void(^)(VKIMMucData *mucData, NSError *error)) failureBlock;
+
+- (NSOperation *) mucUpdateOperation:(VKIMMucData *) mucData
+                         WithSuccess:(void(^)(VKIMMucData *mucData)) successBlock
+                             Failure:(void(^)(VKIMMucData *mucData, NSError *error)) failureBlock;
+
+- (NSOperation *) mucDeleteOperation:(VKIMMucData *) mucData
+                         WithSuccess:(void(^)(VKIMMucData *mucData)) successBlock
+                             Failure:(void(^)(VKIMMucData *mucData, NSError *error)) failureBlock;
+
 - (NSOperation *) messageSendOperation:(VKIMMessageData *) message
                            WithSuccess:(void(^)(NSArray *messages)) successBlock
                                Failure:(void(^)(VKIMMessageData *message, NSError *error)) failureBlock;
 @end
+
+
+
+
+
+
+
+
