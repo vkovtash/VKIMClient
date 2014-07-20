@@ -16,6 +16,7 @@
 extern NSString *const VKIMResponseSessionKey;
 extern NSString *const VKIMResponseMultipleMessagesKey;
 extern NSString *const VKIMResponseMultipleContactsKey;
+extern NSString *const VKIMResponseMultipleMucsKey;
 extern NSString *const VKIMResponseContactKey;
 extern NSString *const VKIMResponseErrorKey;
 
