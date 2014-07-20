@@ -14,7 +14,9 @@
 @interface VKIMMucData : NSObject <VKIMContactProtocol>
 @property (strong,nonatomic) NSString *contactID;
 @property (strong,nonatomic) NSString *jid;
+@property (strong, nonatomic) NSString *name;
 @property (nonatomic) NSUInteger readOffset;
+@property (nonatomic) NSUInteger historyOffset;
 @property (nonatomic) NSUInteger eventID;
 @property (strong,nonatomic) VKIMSessionData *session;
 @end

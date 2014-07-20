@@ -11,8 +11,13 @@
 
 @class VKIMSession;
 @protocol VKIMContactProtocol <NSObject>
+@property (readonly, nonatomic) NSString *jid;
 @property (readonly, nonatomic) NSString *contactID;
+@property (readonly, nonatomic) NSUInteger eventID;
 @property (readonly, nonatomic) VKIMSessionData *session;
+@property (strong, nonatomic) NSString *name;
+@property (nonatomic) NSUInteger historyOffset;
+@property (nonatomic) NSUInteger readOffset;
 @end
 
 @interface VKIMMessageData : NSObject

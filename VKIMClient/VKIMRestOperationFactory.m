@@ -186,7 +186,9 @@ static NSString *const kMucMessageRequestName = @"mucMessage";
         RKObjectMapping *mapping = [RKObjectMapping requestMapping];
         [mapping addAttributeMappingsFromDictionary:@{
          @"mucID": @"id",
+         @"name":@"name",
          @"readOffset":@"read_offset",
+         @"historyOffset":@"history_offset",
          @"jid":@"jid",
          }];
         mucUpdateRequestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:mapping
