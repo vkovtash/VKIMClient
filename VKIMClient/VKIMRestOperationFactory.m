@@ -81,10 +81,12 @@ static NSString *const kMucMessageRequestName = @"mucMessage";
     if (mucsResponseDescriptor == nil) {
         RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[VKIMMucData class]];
         [mapping addAttributeMappingsFromDictionary:@{
-         @"id": @"mucID",
+         @"id": @"contactID",
          @"jid": @"jid",
+         @"name": @"name",
          @"event_id":@"eventID",
-         @"read_offset":@"readOffset"
+         @"read_offset":@"readOffset",
+         @"history_offset":@"historyOffset"
          }];
         mucsResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:mapping
                                                                                   method:RKRequestMethodAny
@@ -185,7 +187,7 @@ static NSString *const kMucMessageRequestName = @"mucMessage";
     if (mucUpdateRequestDescriptor == nil) {
         RKObjectMapping *mapping = [RKObjectMapping requestMapping];
         [mapping addAttributeMappingsFromDictionary:@{
-         @"mucID": @"id",
+         @"contactID": @"id",
          @"name":@"name",
          @"readOffset":@"read_offset",
          @"historyOffset":@"history_offset",
