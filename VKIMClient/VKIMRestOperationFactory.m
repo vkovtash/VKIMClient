@@ -248,13 +248,13 @@ static NSString *const kMucMessageRequestName = @"mucMessage";
                                          object:(id)object
                                      parameters:(NSDictionary *)parameters
                                           token:(NSString *) token{
-    RKObjectRequestOperation *operation = nil;
-    NSMutableURLRequest *urlRequest = [self.manager requestWithPathForRouteNamed:routeName
-                                                                          object:object
-                                                                      parameters:parameters];
-    [urlRequest setValue:[self authValueForToken:token] forHTTPHeaderField:@"Authorization"];
-    operation = [self.manager objectRequestOperationWithRequest:urlRequest success:nil failure:nil];
-    return operation;
+    RKRequestMethod method;
+    NSURL *url = [self.manager.router URLForRouteNamed:routeName method:&method object:object];
+    return [self authenticatedObjectRequestOperationWithObject:object
+                                                        method:method
+                                                          path:[url relativeString]
+                                                    parameters:parameters
+                                                         token:token];
 }
 
 #pragma mark - Factory Methods
@@ -604,12 +604,14 @@ static NSString *const kMucMessageRequestName = @"mucMessage";
         [self.manager.router.routeSet addRoute:[RKRoute routeWithClass:[VKIMSessionData class]
                                                            pathPattern:@"sessions/:sessionID"
                                                                 method:RKRequestMethodDELETE]];
+        
         [self.manager.router.routeSet addRoute:[RKRoute routeWithName:kNormalMessageRequestName
                                                           pathPattern:@"sessions/:contact.session.sessionID/contacts/:contact.contactID/messages"
                                                                method:RKRequestMethodPOST]];
         [self.manager.router.routeSet addRoute:[RKRoute routeWithName:kMucMessageRequestName
                                                           pathPattern:@"sessions/:contact.session.sessionID/mucs/:contact.contactID/messages"
                                                                method:RKRequestMethodPOST]];
+        
         [self.manager.router.routeSet addRoute:[RKRoute routeWithClass:[VKIMContactData class]
                                                            pathPattern:@"sessions/:session.sessionID/contacts/:contactID"
                                                                 method:RKRequestMethodPUT]];
