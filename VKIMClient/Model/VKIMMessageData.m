@@ -8,18 +8,34 @@
 
 #import "VKIMMessageData.h"
 
+@interface VKIMMessageData()
+@property (strong, nonatomic) id <VKIMContactProtocol> contact;
+@end
+
 @implementation VKIMMessageData
+
+- (instancetype) initWithContact:(id) contact {
+    if (![contact conformsToProtocol:@protocol(VKIMContactProtocol)]) {
+        return nil;
+    }
+    
+    self = [super init];
+    if (self) {
+        _contact = contact;
+    }
+    return self;
+}
+
 - (NSDate *) messageDate{
     return [NSDate dateWithTimeIntervalSince1970:[self.timestamp integerValue]];
 }
 
 - (id) copyWithZone:(NSZone *)zone{    
-    id copy = [[[self class] allocWithZone:zone] init];
+    id copy = [[[self class] allocWithZone:zone] initWithContact:self.contact];
     if (copy){
         [copy setText:[self.text copyWithZone:zone]];
+        [copy setContactID:self.contactID];
         [copy setInbound:self.inbound];
-        [copy setContact:self.contact];
-        [copy setContactID:[self.contactID copyWithZone:zone]];
         [copy setEventID:self.eventID];
         [copy setTimestamp:self.timestamp];
     }

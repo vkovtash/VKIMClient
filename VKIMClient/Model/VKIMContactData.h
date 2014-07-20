@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "VKIMSessionData.h"
+#import "VKIMMessageData.h"
 
 typedef enum VKIMContactState {
     VKIMContactAvailable,
@@ -22,7 +23,7 @@ typedef enum VKIMContactAuthorization {
     VKIMContactAuthorizationGranted
 } VKIMContactAuthorization;
 
-@interface VKIMContactData : NSObject
+@interface VKIMContactData : NSObject <VKIMContactProtocol>
 @property (strong,nonatomic) NSString *contactID;
 @property (strong,nonatomic) NSString *jid;
 @property (strong,nonatomic) NSString *name;

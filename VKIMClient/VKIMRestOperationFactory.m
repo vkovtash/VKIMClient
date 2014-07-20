@@ -18,6 +18,9 @@ NSString *const VKIMResponseContactKey = @"contact";
 NSString *const VKIMResponseMucKey = @"muc";
 NSString *const VKIMResponseErrorKey = @"error";
 
+static NSString *const kNormalMessageRequestName = @"normalMessage";
+static NSString *const kMucMessageRequestName = @"mucMessage";
+
 @interface VKIMRestOperationFactory()
 @property (strong,nonatomic) RKObjectManager *manager;
 @end
@@ -221,6 +224,7 @@ NSString *const VKIMResponseErrorKey = @"error";
                                                                method:method
                                                                  path:path
                                                            parameters:parameters];
+    
     [urlRequest setValue:[self authValueForToken:token] forHTTPHeaderField:@"Authorization"];
     operation = [self.manager objectRequestOperationWithRequest:urlRequest success:nil failure:nil];
     return operation;
@@ -235,6 +239,19 @@ NSString *const VKIMResponseErrorKey = @"error";
                                                                           ofObject:object
                                                                             method:RKRequestMethodGET
                                                                         parameters:parameters];
+    [urlRequest setValue:[self authValueForToken:token] forHTTPHeaderField:@"Authorization"];
+    operation = [self.manager objectRequestOperationWithRequest:urlRequest success:nil failure:nil];
+    return operation;
+}
+
+- (id)authenticatedRequestWithPathForRouteNamed:(NSString *) routeName
+                                         object:(id)object
+                                     parameters:(NSDictionary *)parameters
+                                          token:(NSString *) token{
+    RKObjectRequestOperation *operation = nil;
+    NSMutableURLRequest *urlRequest = [self.manager requestWithPathForRouteNamed:routeName
+                                                                          object:object
+                                                                      parameters:parameters];
     [urlRequest setValue:[self authValueForToken:token] forHTTPHeaderField:@"Authorization"];
     operation = [self.manager objectRequestOperationWithRequest:urlRequest success:nil failure:nil];
     return operation;
@@ -534,10 +551,25 @@ NSString *const VKIMResponseErrorKey = @"error";
 - (RKObjectRequestOperation *) messageSendOperation:(VKIMMessageData *) message
                                         WithSuccess:(void(^)(NSArray *messages)) successBlock
                                             Failure:(void(^)(VKIMMessageData *message, NSError *error)) failureBlock;{
-    RKObjectRequestOperation *operation = [self authenticatedObjectRequestOperationWithObject:message
-                                                                                       method:RKRequestMethodPOST
-                                                                                         path:nil parameters:nil
-                                                                                        token:message.contact.session.token];
+    
+    RKObjectRequestOperation *operation = nil;
+    
+    if ([message.contact isKindOfClass:[VKIMContactData class]]) {
+        operation = [self authenticatedRequestWithPathForRouteNamed:kNormalMessageRequestName
+                                                             object:message
+                                                         parameters:nil
+                                                              token:message.contact.session.token];
+    }
+    else if ([message.contact isKindOfClass:[VKIMContactData class]]) {
+        operation = [self authenticatedRequestWithPathForRouteNamed:kMucMessageRequestName
+                                                             object:message
+                                                         parameters:nil
+                                                              token:message.contact.session.token];
+    }
+    else {
+        return nil;
+    }
+    
     [operation
      setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *result){
          successBlock ? successBlock(result.array) : nil;
@@ -572,9 +604,12 @@ NSString *const VKIMResponseErrorKey = @"error";
         [self.manager.router.routeSet addRoute:[RKRoute routeWithClass:[VKIMSessionData class]
                                                            pathPattern:@"sessions/:sessionID"
                                                                 method:RKRequestMethodDELETE]];
-        [self.manager.router.routeSet addRoute:[RKRoute routeWithClass:[VKIMMessageData class]
-                                                           pathPattern:@"sessions/:contact.session.sessionID/contacts/:contact.contactID/messages"
-                                                                method:RKRequestMethodPOST]];
+        [self.manager.router.routeSet addRoute:[RKRoute routeWithName:kNormalMessageRequestName
+                                                          pathPattern:@"sessions/:contact.session.sessionID/contacts/:contact.contactID/messages"
+                                                               method:RKRequestMethodPOST]];
+        [self.manager.router.routeSet addRoute:[RKRoute routeWithName:kMucMessageRequestName
+                                                          pathPattern:@"sessions/:contact.session.sessionID/mucs/:contact.contactID/messages"
+                                                               method:RKRequestMethodPOST]];
         [self.manager.router.routeSet addRoute:[RKRoute routeWithClass:[VKIMContactData class]
                                                            pathPattern:@"sessions/:session.sessionID/contacts/:contactID"
                                                                 method:RKRequestMethodPUT]];

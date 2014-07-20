@@ -7,17 +7,25 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "VKIMContactData.h"
+#import "VKIMSessionData.h"
+
+@class VKIMSession;
+@protocol VKIMContactProtocol <NSObject>
+@property (readonly, nonatomic) NSString *contactID;
+@property (readonly, nonatomic) VKIMSessionData *session;
+@end
 
 @interface VKIMMessageData : NSObject
-@property (strong,nonatomic) NSString *messageID;
-@property (strong,nonatomic) NSString *text;
-@property (assign,nonatomic) BOOL inbound;
+@property (strong, nonatomic) NSString *messageID;
+@property (strong, nonatomic) NSString *text;
+@property (assign, nonatomic) BOOL inbound;
 @property (nonatomic) BOOL delivered;
-@property (strong,nonatomic) VKIMContactData *contact;
-@property (strong,nonatomic) NSString *contactID;
+@property (readonly, nonatomic) id <VKIMContactProtocol> contact;
+@property (strong, nonatomic) NSString *contactID;
 @property (nonatomic) NSUInteger eventID;
 @property (nonatomic) NSUInteger sortID;
 @property (nonatomic) NSNumber *timestamp;
-@property (readonly,nonatomic) NSDate *messageDate;
+@property (readonly, nonatomic) NSDate *messageDate;
+
+- (instancetype) initWithContact:(id <VKIMContactProtocol>) contact;
 @end

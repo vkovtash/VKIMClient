@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "VKIMMessageData.h"
 
 @class VKIMSessionData;
 
-@interface VKIMMucData : NSObject
-@property (strong,nonatomic) NSString *mucID;
+@interface VKIMMucData : NSObject <VKIMContactProtocol>
+@property (strong,nonatomic) NSString *contactID;
 @property (strong,nonatomic) NSString *jid;
 @property (nonatomic) NSUInteger readOffset;
 @property (nonatomic) NSUInteger eventID;
