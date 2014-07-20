@@ -302,6 +302,56 @@
                               inQueue:queue];
 }
 
+- (void) updateMucData:(VKIMMucData *) mucData
+           WithSuccess:(void(^)(VKIMMucData *mucData)) successBlock
+               Failure:(void(^)(VKIMMucData *mucData, NSError *error)) failureBlock
+               inQueue:(NSOperationQueue *) queue {
+    mucData.session = self.data;
+    __weak __typeof(&*self) weakSelf = self;
+    [self.stateDelegate updateMucData:mucData
+                          WithSuccess:successBlock
+                              Failure:^(VKIMMucData *contactData, NSError *error){
+                                  if ([weakSelf isKindOfClass:[VKIMSession class]]) {
+                                      [weakSelf processResponseError:error];
+                                  }
+                                  failureBlock ? failureBlock(contactData,error) : nil;
+                              }
+                              inQueue:queue];
+}
+
+- (void) addMuc:(VKIMMucData *) mucData
+    WithSuccess:(void(^)(VKIMMucData *mucData)) successBlock
+        Failure:(void(^)(VKIMMucData *mucData, NSError *error)) failureBlock
+        inQueue:(NSOperationQueue *) queue {
+    mucData.session = self.data;
+    __weak __typeof(&*self) weakSelf = self;
+    [self.stateDelegate addMuc:mucData
+                   WithSuccess:successBlock
+                       Failure:^(VKIMMucData *contactData, NSError *error){
+                           if ([weakSelf isKindOfClass:[VKIMSession class]]) {
+                               [weakSelf processResponseError:error];
+                           }
+                           failureBlock ? failureBlock(contactData,error) : nil;
+                       }
+                       inQueue:queue];
+}
+
+- (void) deleteMuc:(VKIMMucData *) mucData
+       WithSuccess:(void(^)(VKIMMucData *mucData)) successBlock
+           Failure:(void(^)(VKIMMucData *mucData, NSError *error)) failureBlock
+           inQueue:(NSOperationQueue *) queue {
+    __weak __typeof(&*self) weakSelf = self;
+    [self.stateDelegate deleteMuc:mucData
+                      WithSuccess:successBlock
+                          Failure:^(VKIMMucData *contactData, NSError *error){
+                              if ([weakSelf isKindOfClass:[VKIMSession class]]) {
+                                  [weakSelf processResponseError:error];
+                              }
+                              failureBlock ? failureBlock(contactData,error) : nil;
+                          }
+                          inQueue:queue];
+}
+
 #pragma mark - Default Queue methods
 
 - (void) getSessionDataWithSuccess:(void(^)(VKIMSessionData *session)) successBlock
@@ -381,6 +431,33 @@
             WithSuccess:successBlock
                 Failure:failureBlock
                 inQueue:self.defaultQueue];
+}
+
+- (void) updateMucData:(VKIMMucData *) mucData
+           WithSuccess:(void(^)(VKIMMucData *mucData)) successBlock
+               Failure:(void(^)(VKIMMucData *mucData, NSError *error)) failureBlock {
+    [self updateMucData:mucData
+            WithSuccess:successBlock
+                Failure:failureBlock
+                inQueue:self.defaultQueue];
+}
+
+- (void) addMuc:(VKIMMucData *) mucData
+    WithSuccess:(void(^)(VKIMMucData *mucData)) successBlock
+        Failure:(void(^)(VKIMMucData *mucData, NSError *error)) failureBlock {
+    [self addMuc:mucData
+     WithSuccess:successBlock
+         Failure:failureBlock
+         inQueue:self.defaultQueue];
+}
+
+- (void) deleteMuc:(VKIMMucData *) mucData
+       WithSuccess:(void(^)(VKIMMucData *mucData)) successBlock
+           Failure:(void(^)(VKIMMucData *mucData, NSError *error)) failureBlock {
+    [self deleteMuc:mucData
+        WithSuccess:successBlock
+            Failure:failureBlock
+            inQueue:self.defaultQueue];
 }
 
 - (void) applySessionState:(VKIMSessionStateCode) stateCode{

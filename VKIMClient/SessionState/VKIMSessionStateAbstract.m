@@ -100,6 +100,27 @@
     failureBlock(contactData,[VKIMSessionErrorFactory operationIsNotPermittedInCurentState]);
 }
 
+- (void) updateMucData:(VKIMMucData *) mucData
+           WithSuccess:(void(^)(VKIMMucData *mucData)) successBlock
+               Failure:(void(^)(VKIMMucData *mucData, NSError *error)) failureBlock
+               inQueue:(NSOperationQueue *) queue {
+    failureBlock(mucData,[VKIMSessionErrorFactory operationIsNotPermittedInCurentState]);
+}
+
+- (void) addMuc:(VKIMMucData *) mucData
+    WithSuccess:(void(^)(VKIMMucData *mucData)) successBlock
+        Failure:(void(^)(VKIMMucData *mucData, NSError *error)) failureBlock
+        inQueue:(NSOperationQueue *) queue {
+    failureBlock(mucData,[VKIMSessionErrorFactory operationIsNotPermittedInCurentState]);
+}
+
+- (void) deleteMuc:(VKIMMucData *) mucData
+       WithSuccess:(void(^)(VKIMMucData *mucData)) successBlock
+           Failure:(void(^)(VKIMMucData *mucData, NSError *error)) failureBlock
+           inQueue:(NSOperationQueue *) queue {
+    failureBlock(mucData,[VKIMSessionErrorFactory operationIsNotPermittedInCurentState]);
+}
+
 - (id) initWithStateCode:(VKIMSessionStateCode) stateCode OperationFactory:(VKIMAbstractOperationFactory *) operationFactory{
     self = [super init];
     if (self) {

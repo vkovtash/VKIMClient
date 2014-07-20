@@ -105,6 +105,7 @@ static NSString *const kMucMessageRequestName = @"mucMessage";
                                                       @"event_id": @"eventID",
                                                       @"sort_id":@"sortID",
                                                       @"message_id":@"messageID",
+                                                      @"resource_id":@"resourceID",
                                                       @"text": @"text",
                                                       @"inbound": @"inbound",
                                                       @"delivered":@"delivered",
@@ -628,10 +629,10 @@ static NSString *const kMucMessageRequestName = @"mucMessage";
         
         
         [self.manager.router.routeSet addRoute:[RKRoute routeWithClass:[VKIMMucData class]
-                                                           pathPattern:@"sessions/:session.sessionID/mucs/:mucID"
+                                                           pathPattern:@"sessions/:session.sessionID/mucs/:contactID"
                                                                 method:RKRequestMethodPUT]];
         [self.manager.router.routeSet addRoute:[RKRoute routeWithClass:[VKIMMucData class]
-                                                           pathPattern:@"sessions/:session.sessionID/mucs/:mucID"
+                                                           pathPattern:@"sessions/:session.sessionID/mucs/:contactID"
                                                                 method:RKRequestMethodDELETE]];
         [self.manager.router.routeSet addRoute:[RKRoute routeWithClass:[VKIMMucData class]
                                                            pathPattern:@"sessions/:session.sessionID/mucs"

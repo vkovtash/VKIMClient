@@ -155,6 +155,39 @@
     [queue addOperation:operation];
 }
 
+- (void) updateMucData:(VKIMMucData *) mucData
+           WithSuccess:(void(^)(VKIMMucData *mucData)) successBlock
+               Failure:(void(^)(VKIMMucData *mucData, NSError *error)) failureBlock
+               inQueue:(NSOperationQueue *) queue {
+    NSOperation *operation = [self.operationFactory mucUpdateOperation:mucData
+                                                           WithSuccess:successBlock
+                                                               Failure:failureBlock];
+    
+    [queue addOperation:operation];
+}
+
+- (void) addMuc:(VKIMMucData *) mucData
+    WithSuccess:(void(^)(VKIMMucData *mucData)) successBlock
+        Failure:(void(^)(VKIMMucData *mucData, NSError *error)) failureBlock
+        inQueue:(NSOperationQueue *) queue {
+    NSOperation *operation = [self.operationFactory mucCreateOperation:mucData
+                                                           WithSuccess:successBlock
+                                                               Failure:failureBlock];
+    
+    [queue addOperation:operation];
+}
+
+- (void) deleteMuc:(VKIMMucData *) mucData
+       WithSuccess:(void(^)(VKIMMucData *mucData)) successBlock
+           Failure:(void(^)(VKIMMucData *mucData, NSError *error)) failureBlock
+           inQueue:(NSOperationQueue *) queue {
+    NSOperation *operation = [self.operationFactory mucDeleteOperation:mucData
+                                                           WithSuccess:successBlock
+                                                               Failure:failureBlock];
+    
+    [queue addOperation:operation];
+}
+
 #pragma mark - PrivateMethods
 
 - (void) processInboundMessages:(NSArray *) messages{

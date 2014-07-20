@@ -90,6 +90,21 @@ typedef enum VKIMSessionStateCode {
                Failure:(void(^)(VKIMContactData *contactData, NSError *error)) failureBlock
                inQueue:(NSOperationQueue *) queue;
 
+- (void) updateMucData:(VKIMMucData *) mucData
+           WithSuccess:(void(^)(VKIMMucData *mucData)) successBlock
+               Failure:(void(^)(VKIMMucData *mucData, NSError *error)) failureBlock
+               inQueue:(NSOperationQueue *) queue;
+
+- (void) addMuc:(VKIMMucData *) mucData
+    WithSuccess:(void(^)(VKIMMucData *mucData)) successBlock
+        Failure:(void(^)(VKIMMucData *mucData, NSError *error)) failureBlock
+        inQueue:(NSOperationQueue *) queue;
+
+- (void) deleteMuc:(VKIMMucData *) mucData
+       WithSuccess:(void(^)(VKIMMucData *mucData)) successBlock
+           Failure:(void(^)(VKIMMucData *mucData, NSError *error)) failureBlock
+           inQueue:(NSOperationQueue *) queue;
+
 
 - (id) initWithStateCode:(VKIMSessionStateCode) stateCode OperationFactory:(VKIMAbstractOperationFactory *) operationFactory;
 @end

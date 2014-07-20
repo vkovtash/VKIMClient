@@ -80,6 +80,21 @@
                Failure:(void(^)(VKIMContactData *contactData, NSError *error)) failureBlock
                inQueue:(NSOperationQueue *) queue;
 
+- (void) updateMucData:(VKIMMucData *) mucData
+           WithSuccess:(void(^)(VKIMMucData *mucData)) successBlock
+               Failure:(void(^)(VKIMMucData *mucData, NSError *error)) failureBlock
+               inQueue:(NSOperationQueue *) queue;
+
+- (void) addMuc:(VKIMMucData *) mucData
+    WithSuccess:(void(^)(VKIMMucData *mucData)) successBlock
+        Failure:(void(^)(VKIMMucData *mucData, NSError *error)) failureBlock
+        inQueue:(NSOperationQueue *) queue;
+
+- (void) deleteMuc:(VKIMMucData *) mucData
+       WithSuccess:(void(^)(VKIMMucData *mucData)) successBlock
+           Failure:(void(^)(VKIMMucData *mucData, NSError *error)) failureBlock
+           inQueue:(NSOperationQueue *) queue;
+
 - (void) getSessionDataWithSuccess:(void(^)(VKIMSessionData *session)) successBlock
                            Failure:(void(^)(NSError *error)) failureBlock;
 
@@ -114,6 +129,18 @@
 - (void) deleteContact:(VKIMContactData *) contactData
            WithSuccess:(void(^)(VKIMContactData *contactData)) successBlock
                Failure:(void(^)(VKIMContactData *contactData, NSError *error)) failureBlock;
+
+- (void) updateMucData:(VKIMMucData *) mucData
+           WithSuccess:(void(^)(VKIMMucData *mucData)) successBlock
+               Failure:(void(^)(VKIMMucData *mucData, NSError *error)) failureBlock;
+
+- (void) addMuc:(VKIMMucData *) mucData
+    WithSuccess:(void(^)(VKIMMucData *mucData)) successBlock
+        Failure:(void(^)(VKIMMucData *mucData, NSError *error)) failureBlock;
+
+- (void) deleteMuc:(VKIMMucData *) mucData
+       WithSuccess:(void(^)(VKIMMucData *mucData)) successBlock
+           Failure:(void(^)(VKIMMucData *mucData, NSError *error)) failureBlock;
 
 - (void) applySessionState:(VKIMSessionStateCode) stateCode;
 
