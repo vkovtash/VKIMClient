@@ -27,6 +27,7 @@
 @property (nonatomic) BOOL delivered;
 @property (readonly, nonatomic) id <VKIMContactProtocol> contact;
 @property (strong, nonatomic) NSString *contactID;
+@property (strong, nonatomic) NSString *resourceID;
 @property (nonatomic) NSUInteger eventID;
 @property (nonatomic) NSUInteger sortID;
 @property (nonatomic) NSNumber *timestamp;
