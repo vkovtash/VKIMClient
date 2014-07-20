@@ -565,7 +565,7 @@ static NSString *const kMucMessageRequestName = @"mucMessage";
                                                          parameters:nil
                                                               token:message.contact.session.token];
     }
-    else if ([message.contact isKindOfClass:[VKIMContactData class]]) {
+    else if ([message.contact isKindOfClass:[VKIMMucData class]]) {
         operation = [self authenticatedRequestWithPathForRouteNamed:kMucMessageRequestName
                                                              object:message
                                                          parameters:nil
