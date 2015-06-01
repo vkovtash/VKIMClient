@@ -577,7 +577,7 @@ static NSString *const kMucMessageRequestName = @"mucMessage";
     
     [operation
      setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *result){
-         successBlock ? successBlock(result.array) : nil;
+         successBlock ? successBlock(result.dictionary[@"messages"]) : nil;
      }
      failure:^(RKObjectRequestOperation *operation, NSError *error){
          NSError *returnedError = [self createError:error];
