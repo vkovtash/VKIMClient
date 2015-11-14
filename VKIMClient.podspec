@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'VKIMClient'
-  s.version      = '0.6.0'
+  s.version      = '0.7.0'
   s.summary      = "Client library for https://github.com/Unact/REST-XMPP-Client server."
   s.homepage     = 'https://github.com/vkovtash/VKIMClient'
 
@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.author       = { 'Vlad Kovtash' => 'v.kovtash@gmail.com' }
   s.source       = { :git => 'https://github.com/vkovtash/VKIMClient.git', :tag => s.version.to_s }
 
-  s.platform     = :ios, '6.1'
+  s.platform     = :ios, '7'
   s.requires_arc = true
   s.source_files = 'VKIMClient/**/*.{h,m}'
   
