@@ -10,118 +10,134 @@
 #import "VKIMSessionErrorFactory.h"
 
 @implementation VKIMSessionStateAbstract
-- (void) startWithJID:(NSString *) jid
-                      Password:(NSString *) password
-                        Server:(NSString *) server
-                     pushToken:(NSString *) pushToken
-                       Success:(void(^)(VKIMSessionData *session)) successBlock
-                       Failure:(void(^)(NSError *error)) failureBlock{
+
+- (NSOperation *)startWithJID:(NSString *)jid
+                      Password:(NSString *)password
+                        Server:(NSString *)server
+                     pushToken:(NSString *)pushToken
+                       Success:(void(^)(VKIMSessionData *session))successBlock
+                       Failure:(void(^)(NSError *error))failureBlock {
+    failureBlock([VKIMSessionErrorFactory operationIsNotPermittedInCurentState]);
+    return nil;
+}
+
+- (NSOperation *)restoreWithID:(NSString *)sesionID
+                         token:(NSString *)token
+                       Success:(void(^)(VKIMSessionData *session))successBlock
+                       Failure:(void(^)(NSError *error))failureBlock
+                       inQueue:(NSOperationQueue *)queue {
     failureBlock([VKIMSessionErrorFactory operationIsNotPermittedInCurentState]);
 }
 
-- (void) restoreWithID:(NSString *) sesionID
-                 token:(NSString *) token
-               Success:(void(^)(VKIMSessionData *session)) successBlock
-               Failure:(void(^)(NSError *error)) failureBlock
-               inQueue:(NSOperationQueue *) queue;{
+- (NSOperation *)getSessionData:(VKIMSessionData *)session
+                    WithSuccess:(void(^)(VKIMSessionData *session))successBlock
+                        Failure:(void(^)(NSError *error))failureBlock
+                        inQueue:(NSOperationQueue *)queue {
     failureBlock([VKIMSessionErrorFactory operationIsNotPermittedInCurentState]);
+    return nil;
 }
 
-- (void) getSessionData:(VKIMSessionData *) session
-                     WithSuccess:(void(^)(VKIMSessionData *session)) successBlock
-                         Failure:(void(^)(NSError *error)) failureBlock
-                         inQueue:(NSOperationQueue *) queue{
+- (NSOperation *)close:(VKIMSessionData *)session
+            WithSuccess:(void(^)(VKIMSessionData *session))successBlock
+                Failure:(void(^)(NSError *error))failureBlock {
     failureBlock([VKIMSessionErrorFactory operationIsNotPermittedInCurentState]);
+    return nil;
 }
 
-- (void) close:(VKIMSessionData *) session
-            WithSuccess:(void(^)(VKIMSessionData *session)) successBlock
-                Failure:(void(^)(NSError *error)) failureBlock{
+- (NSOperation *)getContactsData:(VKIMSessionData *)session
+                      WithOffset:(NSUInteger)offset
+                         Success:(void(^)(NSArray *contacts))successBlock
+                         Failure:(void(^)(NSError *error))failureBlock
+                         inQueue:(NSOperationQueue *)queue {
     failureBlock([VKIMSessionErrorFactory operationIsNotPermittedInCurentState]);
+    return nil;
 }
 
-- (void) getContactsData:(VKIMSessionData *) session
-                       WithOffset:(NSUInteger) offset
-                          Success:(void(^)(NSArray *contacts)) successBlock
-                          Failure:(void(^)(NSError *error)) failureBlock
-                          inQueue:(NSOperationQueue *) queue{
+- (NSOperation *)getMessages:(VKIMSessionData *)session
+                  WithOffset:(NSUInteger)offset
+                     Success:(void(^)(NSArray *messages))successBlock
+                     Failure:(void(^)(NSError *error))failureBlock
+                     inQueue:(NSOperationQueue *)queue {
     failureBlock([VKIMSessionErrorFactory operationIsNotPermittedInCurentState]);
+    return nil;
 }
 
-- (void) getMessages:(VKIMSessionData *) session
-                   WithOffset:(NSUInteger) offset
-                      Success:(void(^)(NSArray *messages)) successBlock
-                      Failure:(void(^)(NSError *error)) failureBlock
-                      inQueue:(NSOperationQueue *) queue{
+- (NSOperation *)getFeed:(VKIMSessionData *)session
+              WithOffset:(NSUInteger)offset
+                 Success:(void(^)(NSDictionary *feed))successBlock
+                 Failure:(void(^)(NSError *error))failureBlock
+                 inQueue:(NSOperationQueue *)queue {
     failureBlock([VKIMSessionErrorFactory operationIsNotPermittedInCurentState]);
+    return nil;
 }
 
-- (void) getFeed:(VKIMSessionData *) session
-               WithOffset:(NSUInteger) offset
-                  Success:(void(^)(NSDictionary *feed)) successBlock
-                  Failure:(void(^)(NSError *error)) failureBlock
-                  inQueue:(NSOperationQueue *) queue{
+- (NSOperation *)pollFeed:(VKIMSessionData *)session
+               WithOffset:(NSUInteger)offset
+                  Success:(void(^)(NSDictionary *feed))successBlock
+                  Failure:(void(^)(NSError *error))failureBlock
+                  inQueue:(NSOperationQueue *)queue {
     failureBlock([VKIMSessionErrorFactory operationIsNotPermittedInCurentState]);
+    return nil;
 }
 
-- (void) pollFeed:(VKIMSessionData *) session
-       WithOffset:(NSUInteger) offset
-          Success:(void(^)(NSDictionary *feed)) successBlock
-          Failure:(void(^)(NSError *error)) failureBlock
-          inQueue:(NSOperationQueue *) queue{
-    failureBlock([VKIMSessionErrorFactory operationIsNotPermittedInCurentState]);
+- (NSOperation *)sendMessage:(VKIMMessageData *)message
+                  WithSuccess:(void(^)(NSArray *messages))successBlock
+                      Failure:(void(^)(VKIMMessageData *message, NSError *error))failureBlock
+                      inQueue:(NSOperationQueue *)queue {
+    failureBlock(message, [VKIMSessionErrorFactory operationIsNotPermittedInCurentState]);
+    return nil;
 }
 
-- (void) sendMessage:(VKIMMessageData *) message
-                  WithSuccess:(void(^)(NSArray *messages)) successBlock
-                      Failure:(void(^)(VKIMMessageData *message, NSError *error)) failureBlock
-                      inQueue:(NSOperationQueue *) queue{
-    failureBlock(message,[VKIMSessionErrorFactory operationIsNotPermittedInCurentState]);
+- (NSOperation *)updateContactData:(VKIMContactData *)contactData
+                       WithSuccess:(void(^)(VKIMContactData *contactData))successBlock
+                           Failure:(void(^)(VKIMContactData *contactData, NSError *error))failureBlock
+                           inQueue:(NSOperationQueue *)queue {
+    failureBlock(contactData, [VKIMSessionErrorFactory operationIsNotPermittedInCurentState]);
+    return nil;
 }
 
-- (void) updateContactData:(VKIMContactData *) contactData
-               WithSuccess:(void(^)(VKIMContactData *contactData)) successBlock
-                   Failure:(void(^)(VKIMContactData *contactData, NSError *error)) failureBlock
-                   inQueue:(NSOperationQueue *) queue{
-    failureBlock(contactData,[VKIMSessionErrorFactory operationIsNotPermittedInCurentState]);
+- (NSOperation *)addContact:(VKIMContactData *)contactData
+        WithSuccess:(void(^)(VKIMContactData *contactData))successBlock
+            Failure:(void(^)(VKIMContactData *contactData, NSError *error))failureBlock
+            inQueue:(NSOperationQueue *)queue {
+    failureBlock(contactData, [VKIMSessionErrorFactory operationIsNotPermittedInCurentState]);
+    return nil;
 }
 
-- (void) addContact:(VKIMContactData *) contactData
-        WithSuccess:(void(^)(VKIMContactData *contactData)) successBlock
-            Failure:(void(^)(VKIMContactData *contactData, NSError *error)) failureBlock
-            inQueue:(NSOperationQueue *) queue{
-    failureBlock(contactData,[VKIMSessionErrorFactory operationIsNotPermittedInCurentState]);
+- (NSOperation *)deleteContact:(VKIMContactData *)contactData
+                   WithSuccess:(void(^)(VKIMContactData *contactData))successBlock
+                       Failure:(void(^)(VKIMContactData *contactData, NSError *error))failureBlock
+                       inQueue:(NSOperationQueue *)queue {
+    failureBlock(contactData, [VKIMSessionErrorFactory operationIsNotPermittedInCurentState]);
+    return nil;
 }
 
-- (void) deleteContact:(VKIMContactData *) contactData
-           WithSuccess:(void(^)(VKIMContactData *contactData)) successBlock
-               Failure:(void(^)(VKIMContactData *contactData, NSError *error)) failureBlock
-               inQueue:(NSOperationQueue *) queue{
-    failureBlock(contactData,[VKIMSessionErrorFactory operationIsNotPermittedInCurentState]);
-}
-
-- (void) updateMucData:(VKIMMucData *) mucData
-           WithSuccess:(void(^)(VKIMMucData *mucData)) successBlock
-               Failure:(void(^)(VKIMMucData *mucData, NSError *error)) failureBlock
-               inQueue:(NSOperationQueue *) queue {
+- (NSOperation *)updateMucData:(VKIMMucData *)mucData
+                   WithSuccess:(void(^)(VKIMMucData *mucData))successBlock
+                       Failure:(void(^)(VKIMMucData *mucData, NSError *error))failureBlock
+                       inQueue:(NSOperationQueue *)queue {
     failureBlock(mucData,[VKIMSessionErrorFactory operationIsNotPermittedInCurentState]);
+    return nil;
 }
 
-- (void) addMuc:(VKIMMucData *) mucData
-    WithSuccess:(void(^)(VKIMMucData *mucData)) successBlock
-        Failure:(void(^)(VKIMMucData *mucData, NSError *error)) failureBlock
-        inQueue:(NSOperationQueue *) queue {
-    failureBlock(mucData,[VKIMSessionErrorFactory operationIsNotPermittedInCurentState]);
+- (NSOperation *)addMuc:(VKIMMucData *)mucData
+    WithSuccess:(void(^)(VKIMMucData *mucData))successBlock
+        Failure:(void(^)(VKIMMucData *mucData, NSError *error))failureBlock
+        inQueue:(NSOperationQueue *)queue {
+    failureBlock(mucData, [VKIMSessionErrorFactory operationIsNotPermittedInCurentState]);
+    return nil;
 }
 
-- (void) deleteMuc:(VKIMMucData *) mucData
-       WithSuccess:(void(^)(VKIMMucData *mucData)) successBlock
-           Failure:(void(^)(VKIMMucData *mucData, NSError *error)) failureBlock
-           inQueue:(NSOperationQueue *) queue {
-    failureBlock(mucData,[VKIMSessionErrorFactory operationIsNotPermittedInCurentState]);
+- (NSOperation *)deleteMuc:(VKIMMucData *)mucData
+               WithSuccess:(void(^)(VKIMMucData *mucData))successBlock
+                   Failure:(void(^)(VKIMMucData *mucData, NSError *error))failureBlock
+                   inQueue:(NSOperationQueue *)queue {
+    failureBlock(mucData, [VKIMSessionErrorFactory operationIsNotPermittedInCurentState]);
+    return nil;
 }
 
-- (id) initWithStateCode:(VKIMSessionStateCode) stateCode OperationFactory:(VKIMAbstractOperationFactory *) operationFactory{
+- (instancetype)initWithStateCode:(VKIMSessionStateCode)stateCode
+                 OperationFactory:(VKIMAbstractOperationFactory *)operationFactory {
     self = [super init];
     if (self) {
         _operationFactory = operationFactory;
@@ -129,4 +145,5 @@
     }
     return self;
 }
+
 @end
